@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import SectionLayout from "../../shared/layout/SectionLayout";
-import SplineScene from "../../shared/ui/SplineScene";
+import Terminal from "./Terminal";
 import HeroContent from "./HeroContent";
 
 const Hero = () => {
@@ -17,22 +17,14 @@ const Hero = () => {
         {/* Main Content */}
         <HeroContent />
 
-        {/* Desktop 3D Scene */}
+        {/* Interactive Terminal */}
         <motion.div
-          className="hidden lg:block lg:w-1/2"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1.4, duration: 0.8 }}
+          className="w-full lg:w-3/5 mt-8 lg:mt-0"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
         >
-          <SplineScene
-            sceneUrl="https://prod.spline.design/Hwjz8oLv9WN8ejij/scene.splinecoe"
-            className="w-full h-96"
-            fallback={
-              <div className="flex justify-center">
-                <div className="w-96 h-96 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-3xl"></div>
-              </div>
-            }
-          />
+          <Terminal />
         </motion.div>
       </div>
     </SectionLayout>
