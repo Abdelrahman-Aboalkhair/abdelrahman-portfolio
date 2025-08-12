@@ -38,7 +38,7 @@ const Projects = () => {
 
         {/* Projects Grid */}
         <motion.div
-          className="grid md:grid-cols-2 gap-8"
+          className="grid md:grid-cols-2 gap-6"
           variants={containerVariants}
         >
           {projectsData.map((project) => (

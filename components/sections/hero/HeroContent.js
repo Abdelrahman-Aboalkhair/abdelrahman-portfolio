@@ -5,7 +5,7 @@ import OverlayReveal from "../../shared/ui/OverlayReveal";
 
 const HeroContent = () => {
   return (
-    <div className="lg:w-1/2 text-center lg:text-left">
+    <div className="lg:w-[60%] text-center lg:text-left">
       <motion.div
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
