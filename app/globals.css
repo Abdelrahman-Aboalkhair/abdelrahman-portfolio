@@ -3,27 +3,27 @@
 /* Root variables with dark theme colors */
 :root {
   --background: #111111;
-  --foreground: #E4E0E0;
-  --primary: #7300FF;
-  --secondary: #2E2E2E;
-  --light-gray: #E4E0E0;
-  --primary-hover: #A366FF;
+  --foreground: #e4e0e0;
+  --primary: #7300ff;
+  --secondary: #2e2e2e;
+  --light-gray: #e4e0e0;
+  --primary-hover: #a366ff;
 }
 
 @theme {
-  --color-primary: #7300FF;
-  --color-secondary: #2E2E2E;
-  --color-light-gray: #9B9B9B;
-  --color-primary-hover: #A366FF;
+  --color-primary: #7300ff;
+  --color-secondary: #2e2e2e;
+  --color-light-gray: #9b9b9b;
+  --color-primary-hover: #a366ff;
   --color-background: #111111;
-  --color-foreground: #E4E0E0;
-  --color-muted: #232323
+  --color-foreground: #e4e0e0;
+  --color-muted: #232323;
 }
 
 /* Set body styles */
 body {
   background: #111111;
-  color: #E4E0E0;
+  color: #e4e0e0;
   margin: 0;
   padding: 0;
   line-height: 1.6;
@@ -36,18 +36,18 @@ html {
 
 /* Button hover transitions */
 .btn-primary {
-  background-color: #7300FF;
+  background-color: #7300ff;
   transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: #A366FF;
+  background-color: #a366ff;
   transform: scale(1.05);
 }
 
 /* Handwritten text style */
 .font-handwritten {
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: "Comic Sans MS", cursive, sans-serif;
   font-weight: 400;
 }
 
@@ -61,10 +61,15 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #7300FF;
+  background: #7300ff;
   border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #A366FF;
+  background: #a366ff;
+}
+
+::selection {
+  background: #7300ff; /* highlight color */
+  color: black; /* text color while highlighted */
 }

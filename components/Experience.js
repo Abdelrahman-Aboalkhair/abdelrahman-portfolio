@@ -34,13 +34,16 @@ const Experience = () => {
             >
                 {/* Section Title */}
                 <motion.h2
-                    className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#7300FF] mb-12"
+                    className="flex items-center gap-8 text-4xl sm:text-5xl lg:text-5xl font-bold mb-12"
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                >
-                    Experience<span className="text-[#7300FF]">.</span>
+                    transition={{ duration: 0.6 }}                >
+                    <div className='flex gap-1'>
+                        Experience <span className="text-primary">.</span>
+                    </div>
+                    {/* Live divider */}
+                    <div className="w-full h-[1.6px] bg-muted"></div>
                 </motion.h2>
 
                 {/* Experience Entries */}

@@ -34,14 +34,21 @@ const Projects = () => {
             >
                 {/* Section Title */}
                 <motion.h2
-                    className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#7300FF] mb-12"
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
+                    className="flex items-center justify-between gap-8 text-4xl sm:text-5xl lg:text-5xl font-bold mb-12"
                 >
-                    Projects<span className="text-[#7300FF]">.</span>
+                    {/* Live divider */}
+                    <div className="w-full h-[1.6px] bg-muted"></div>
+
+                    <div className="flex gap-1">
+                        Projects <span className="text-primary">.</span>
+                    </div>
                 </motion.h2>
+
+
 
                 {/* Projects Grid */}
                 <motion.div
