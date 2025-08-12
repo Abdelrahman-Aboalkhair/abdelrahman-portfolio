@@ -40,7 +40,7 @@ const Contact = () => {
         {/* Section Title */}
         <motion.div className="mb-4" variants={itemVariants}>
           <OverlayReveal trigger="whileInView" delay={0.5} duration={0.8}>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mr-[-2px]">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mr-[-2px]">
               Contact<span className="text-[#7300FF]">.</span>
             </h2>
           </OverlayReveal>

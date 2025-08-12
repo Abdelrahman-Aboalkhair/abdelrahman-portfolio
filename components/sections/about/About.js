@@ -70,11 +70,11 @@ const About = () => {
       >
         <SectionHeader title="About" align="left" overlayDelay={0.2} />
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* About Text */}
-          <motion.div variants={itemVariants}>
+          <motion.div variants={itemVariants} className="w-full">
             <OverlayReveal>
-              <p className="text-lg sm:text-lg text-light-gray mb-6 leading-relaxed">
+              <p className="text-base sm:text-lg text-light-gray mb-4 sm:mb-6 leading-relaxed">
                 Hey! I'm Abdelrahman – if you haven't pieced that together yet.
                 I'm a self-taught developer from Egypt with a passion for
                 crafting full-stack web apps.
@@ -82,7 +82,7 @@ const About = () => {
             </OverlayReveal>
 
             <OverlayReveal>
-              <p className="text-lg sm:text-lg text-light-gray mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg text-light-gray mb-6 sm:mb-8 leading-relaxed">
                 I specialize in the Full Stack Development, but I'm always game
                 to explore new tools if they're the right fit for the job. When
                 I'm not building, I'm probably learning something new to push my
@@ -97,21 +97,24 @@ const About = () => {
           </motion.div>
 
           {/* Skills Section */}
-          <motion.div variants={itemVariants} className="space-y-8">
+          <motion.div
+            variants={itemVariants}
+            className="w-full space-y-6 sm:space-y-8"
+          >
             <SkillSection
               title="Use at projects"
-              icon="☺"
+              icon="💼"
               skills={projectSkills}
-              gridCols="grid-cols-2 sm:grid-cols-4"
+              gridCols="grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
               containerVariants={containerVariants}
               itemVariants={itemVariants}
             />
 
             <SkillSection
               title="Use for fun"
-              icon="☺"
+              icon="🎨"
               skills={funSkills}
-              gridCols="grid-cols-1 sm:grid-cols-3"
+              gridCols="grid-cols-2 sm:grid-cols-3"
               containerVariants={containerVariants}
               itemVariants={itemVariants}
             />

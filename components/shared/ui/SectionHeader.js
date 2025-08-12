@@ -11,7 +11,7 @@ const SectionHeader = ({
   showDivider = true,
 }) => {
   const headerContent = (
-    <h2 className="flex items-center text-2xl sm:text-3xl lg:text-4xl font-bold">
+    <h2 className="flex items-center text-2xl sm:text-3xl lg:text-5xl font-bold">
       {title} <span className="text-primary">.</span>
     </h2>
   );

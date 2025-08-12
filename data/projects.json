@@ -1,16 +1,281 @@
 [
-    {
-        "id": 1,
+  {
+    "id": 1,
+    "image": "/projects/ss-ecommerce/homepage.png",
+    "title": "SS E-Commerce Platform",
+    "tech": "Next.js - TypeScript - Express.js - Prisma - PostgreSQL - Redis - Socket.IO",
+    "desc": "A modern full-stack e-commerce platform featuring user authentication, product management, real-time chat, analytics dashboard, payment processing with Stripe, and WebRTC video calls. Built with Docker for seamless deployment. Learn more >",
+    "gallery": [
+      {
+        "image": "/projects/ss-ecommerce/homepage.png",
+        "title": "Homepage",
+        "description": "Modern landing page with hero section and product showcase"
+      },
+      {
+        "image": "/projects/ss-ecommerce/dashboard_overview.png",
+        "title": "Admin Dashboard",
+        "description": "Comprehensive overview with analytics and key metrics"
+      },
+      {
+        "image": "/projects/ss-ecommerce/analytics_dashboard.png",
+        "title": "Analytics Dashboard",
+        "description": "Interactive charts and data visualization for business insights"
+      },
+      {
+        "image": "/projects/ss-ecommerce/products_dashboard.png",
+        "title": "Products Management",
+        "description": "CRUD operations for product catalog and inventory"
+      },
+      {
+        "image": "/projects/ss-ecommerce/product_detail.png",
+        "title": "Product Detail Page",
+        "description": "Detailed product view with variants and add to cart functionality"
+      },
+      {
+        "image": "/projects/ss-ecommerce/cart.png",
+        "title": "Shopping Cart",
+        "description": "Interactive cart with quantity management and checkout flow"
+      },
+      {
+        "image": "/projects/ss-ecommerce/payment.png",
+        "title": "Payment Integration",
+        "description": "Stripe payment processing with secure checkout"
+      },
+      {
+        "image": "/projects/ss-ecommerce/your_orders.png",
+        "title": "Order Management",
+        "description": "Order history and status tracking for customers"
+      },
+      {
+        "image": "/projects/ss-ecommerce/track_your_order.png",
+        "title": "Order Tracking",
+        "description": "Real-time shipment tracking with status updates"
+      }
+    ],
+    "features": [
+      "User authentication with social login (Google, Facebook, Twitter, Apple)",
+      "Real-time chat and video calls with Socket.IO and WebRTC",
+      "Advanced analytics dashboard with interactive charts",
+      "Stripe payment integration with webhooks",
+      "Variant-based product management system",
+      "Order tracking and shipment management",
+      "Role-based access control (User, Admin, Superadmin)",
+      "Cloudinary image management",
+      "RESTful and GraphQL APIs",
+      "Docker containerization"
+    ],
+    "techHighlights": [
+      "TypeScript for full-stack type safety",
+      "Prisma ORM with PostgreSQL database",
+      "Redis for caching and session management",
+      "Server-side rendering with Next.js",
+      "Responsive design with Tailwind CSS",
+      "Winston logging and error handling",
+      "Bull queues for background processing"
+    ],
+    "timeline": "6 months",
+    "status": "Completed",
+    "demoUrl": "https://ss-ecommerce-one.vercel.app",
+    "videoUrl": "https://youtu.be/qJDXcQ_sxSI",
+    "codeUrl": "https://github.com/Abdelrahman-Aboalkhair/ecommerce.git"
+  },
+  {
+    "id": 2,
+    "image": "/projects/inventory-system/inventory_dashboard.png",
+    "title": "Variant-Based Inventory Management",
+    "tech": "Next.js - TypeScript - Express.js - Prisma - PostgreSQL",
+    "desc": "An advanced inventory management system with variant-based product organization, attribute management, and real-time stock tracking. Features dynamic filtering and comprehensive admin controls. Learn more >",
+    "gallery": [
+      {
+        "image": "/projects/inventory-system/inventory_dashboard.png",
+        "title": "Inventory Dashboard",
+        "description": "Main dashboard showing stock levels, alerts, and inventory overview"
+      },
+      {
+        "image": "/projects/inventory-system/attributes_dashboard.png",
+        "title": "Attributes Management",
+        "description": "Dynamic attribute system for managing product variants and properties"
+      }
+    ],
+    "features": [
+      "Variant-based product management (size, color, material combinations)",
+      "Dynamic attribute system with dependent dropdowns",
+      "Real-time inventory tracking and stock alerts",
+      "Advanced filtering and search capabilities",
+      "Bulk operations for inventory management",
+      "SKU generation and management",
+      "Category-based product organization",
+      "Comprehensive reporting and analytics"
+    ],
+    "techHighlights": [
+      "Complex relational database design with Prisma",
+      "Dynamic form generation for attributes",
+      "Real-time updates with optimistic UI",
+      "Advanced TypeScript types for variants",
+      "Efficient database queries with joins",
+      "Component-based architecture"
+    ],
+    "timeline": "2 months",
+    "status": "Completed"
+  },
+  {
+    "id": 3,
+    "image": "/projects/chat-app/user_chat.png",
+    "title": "Real-Time Chat Application",
+    "tech": "Socket.IO - WebRTC - Express.js - Next.js - TypeScript",
+    "desc": "A comprehensive real-time communication platform featuring instant messaging, video calls, and customer support integration. Built as part of the e-commerce ecosystem with seamless user experience. Learn more >",
+    "gallery": [
+      {
+        "image": "/projects/chat-app/user_chat.png",
+        "title": "User Chat Interface",
+        "description": "Clean and intuitive chat interface for customer communication"
+      },
+      {
+        "image": "/projects/chat-app/dashboard_chat.png",
+        "title": "Admin Chat Dashboard",
+        "description": "Administrative interface for managing customer support conversations"
+      }
+    ],
+    "features": [
+      "Real-time bidirectional messaging with Socket.IO",
+      "WebRTC video and audio calls",
+      "Customer-to-admin chat support",
+      "Message history persistence",
+      "Online status indicators",
+      "Call controls (mute, camera toggle, screen share)",
+      "Chat room management",
+      "Integration with user authentication system"
+    ],
+    "techHighlights": [
+      "Socket.IO for real-time communication",
+      "WebRTC implementation for peer-to-peer calls",
+      "Custom React hooks for call management",
+      "Real-time database updates",
+      "Event-driven architecture",
+      "Responsive chat UI components"
+    ],
+    "timeline": "2 months",
+    "status": "Completed"
+  },
+  {
+    "id": 4,
+    "image": "/placeholder.png",
+    "title": "Restaurant Booking System",
+    "tech": "React - Node.js - Express.js - MongoDB - Stripe",
+    "desc": "A comprehensive restaurant reservation system with table management, real-time availability, customer notifications, and payment integration. Features include multi-location support and analytics dashboard. Learn more >",
+    "gallery": [
+      {
         "image": "/placeholder.png",
-        "title": "E-Commerce",
-        "tech": "Next.js - Typescript - Express Js - Prisma - Postgres",
-        "desc": "A feature-rich eCommerce platform with real-time chat, analytics, inventory management, and secure payments. Designed and built entirely by me. Learn more >"
-    },
-    {
-        "id": 2,
+        "title": "Booking Interface",
+        "description": "User-friendly reservation system with calendar integration"
+      },
+      {
         "image": "/placeholder.png",
-        "title": "Chat app",
-        "tech": "React - Node.js - Socket.io - MongoDB",
-        "desc": "A real-time chat application with multiple rooms, user authentication, and message history. Built with modern web technologies for seamless communication."
-    }
+        "title": "Table Management",
+        "description": "Restaurant admin panel for managing tables and reservations"
+      }
+    ],
+    "features": [
+      "Real-time table availability checking",
+      "Multi-restaurant location support",
+      "Customer notification system (SMS/Email)",
+      "Payment integration with Stripe",
+      "Table layout visualization",
+      "Booking analytics and reports",
+      "Customer review and rating system",
+      "Waitlist management"
+    ],
+    "techHighlights": [
+      "Real-time updates with Socket.IO",
+      "Optimistic UI for instant feedback",
+      "Efficient calendar algorithms",
+      "RESTful API design",
+      "MongoDB aggregation pipelines",
+      "Responsive design with mobile-first approach"
+    ],
+    "timeline": "3 months",
+    "status": "In Progress",
+    "codeUrl": "https://github.com/Abdelrahman-Aboalkhair/restaurant-booking.git"
+  },
+  {
+    "id": 5,
+    "image": "/placeholder.png",
+    "title": "Tech Blog Platform",
+    "tech": "Next.js - TypeScript - Sanity CMS - Tailwind CSS",
+    "desc": "A modern blog platform focused on tech content with markdown support, syntax highlighting, SEO optimization, and content management system. Features include author profiles and comment system. Learn more >",
+    "gallery": [
+      {
+        "image": "/placeholder.png",
+        "title": "Blog Homepage",
+        "description": "Clean and modern blog layout with featured articles"
+      },
+      {
+        "image": "/placeholder.png",
+        "title": "Article Reader",
+        "description": "Optimized reading experience with syntax highlighting"
+      }
+    ],
+    "features": [
+      "Markdown content support with syntax highlighting",
+      "SEO optimization with meta tags",
+      "Content Management System integration",
+      "Author profile pages",
+      "Comment system with moderation",
+      "Tag-based article categorization",
+      "Search functionality",
+      "Newsletter subscription"
+    ],
+    "techHighlights": [
+      "Static Site Generation with Next.js",
+      "Headless CMS integration with Sanity",
+      "Advanced SEO optimization",
+      "Code syntax highlighting",
+      "Image optimization and lazy loading",
+      "PWA capabilities"
+    ],
+    "timeline": "2 months",
+    "status": "Completed",
+    "demoUrl": "https://tech-blog-platform.vercel.app",
+    "codeUrl": "https://github.com/Abdelrahman-Aboalkhair/tech-blog.git"
+  },
+  {
+    "id": 6,
+    "image": "/placeholder.png",
+    "title": "AI Task Management App",
+    "tech": "React Native - Expo - Node.js - OpenAI API - Firebase",
+    "desc": "An intelligent task management mobile application that uses AI to categorize tasks, suggest priorities, and provide productivity insights. Features cross-platform compatibility and offline support. Learn more >",
+    "gallery": [
+      {
+        "image": "/placeholder.png",
+        "title": "Task Dashboard",
+        "description": "AI-powered task organization with smart categories"
+      },
+      {
+        "image": "/placeholder.png",
+        "title": "Analytics View",
+        "description": "Productivity insights and AI-generated recommendations"
+      }
+    ],
+    "features": [
+      "AI-powered task categorization and prioritization",
+      "Smart deadline predictions",
+      "Productivity analytics and insights",
+      "Cross-platform mobile support (iOS/Android)",
+      "Offline task management",
+      "Voice-to-text task creation",
+      "Team collaboration features",
+      "Integration with calendar apps"
+    ],
+    "techHighlights": [
+      "OpenAI API integration for intelligent features",
+      "React Native for cross-platform development",
+      "Firebase for real-time synchronization",
+      "Offline-first architecture",
+      "Push notification system",
+      "Gesture-based UI interactions"
+    ],
+    "timeline": "4 months",
+    "status": "In Progress",
+    "codeUrl": "https://github.com/Abdelrahman-Aboalkhair/ai-task-manager.git"
+  }
 ]

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Image from "next/image";
 import ProjectModal from "./ProjectModal";
 import { FaChevronRight } from "react-icons/fa";
 
@@ -16,35 +17,53 @@ const ProjectCard = ({ project, variants }) => {
     <>
       <motion.div
         variants={variants}
-        whileHover={{ y: -10, rotate: 1, scale: 1.02 }}
-        className="group relative border-2 border-muted backdrop-blur-xl rounded-md overflow-hidden"
+        whileHover={{ y: -8, rotate: 0.5, scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        className="group relative border-2 border-muted backdrop-blur-xl rounded-md overflow-hidden cursor-pointer hover:border-white/30 transition-colors duration-300"
+        onClick={handleLearnMore}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            handleLearnMore();
+          }
+        }}
       >
-        {/* Project Image Placeholder */}
-        <div className="h-48 bg-white flex items-center justify-center border-b border-white/10">
-          <div className="text-black text-2xl font-handwritten">
-            Project Image
-          </div>
+        {/* Project Image */}
+        <div className="relative h-48 sm:h-52 bg-gradient-to-br from-white/10 to-white/5 border-b border-white/10 overflow-hidden">
+          <Image
+            src={project.image}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            alt={`${project.title} preview`}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+          {/* Overlay on hover for better text readability */}
+          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
         </div>
 
         {/* Project Content */}
-        <div className="p-6 relative z-10">
-          <h3 className="text-xl font-semibold mb-2 transition-colors tracking-wide capitalize">
+        <div className="p-4 sm:p-6 relative z-10">
+          <h3 className="text-lg sm:text-xl font-semibold mb-2 transition-colors tracking-wide line-clamp-2">
             {project.title}
           </h3>
 
-          <p className="text-primary mb-4 text-sm">{project.tech}</p>
+          <p className="text-primary mb-3 sm:mb-4 text-xs sm:text-sm font-medium line-clamp-2">
+            {project.tech}
+          </p>
 
-          <p className="text-white/80 leading-relaxed mb-4">
+          <p className="text-white/80 leading-relaxed mb-4 text-sm sm:text-base line-clamp-3">
             {project.desc.replace(" Learn more >", "")}
           </p>
 
           {/* Learn More Button */}
           <button
             onClick={handleLearnMore}
-            className="flex items-center gap-2 text-[#7300FF] hover:text-[#8533ff] font-medium transition-colors group/btn"
+            className="flex items-center gap-2 text-[#7300FF] hover:text-[#8533ff] font-medium transition-colors group/btn text-sm sm:text-base"
           >
             <span>Learn more</span>
-            <FaChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+            <FaChevronRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 transition-transform" />
           </button>
         </div>
 

@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import SectionLayout from "../../shared/layout/SectionLayout";
 import SplineScene from "../../shared/ui/SplineScene";
 import HeroContent from "./HeroContent";
-import HeroNavigation from "./HeroNavigation";
 
 const Hero = () => {
   return (
@@ -17,9 +16,6 @@ const Hero = () => {
       <div className="flex flex-col lg:flex-row items-center justify-between">
         {/* Main Content */}
         <HeroContent />
-
-        {/* Side Navigation Buttons (Mobile) */}
-        <HeroNavigation />
 
         {/* Desktop 3D Scene */}
         <motion.div
