@@ -1,26 +1,77 @@
 @import "tailwindcss";
 
+/* Root variables with dark theme colors */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #111111;
+  --foreground: #E4E0E0;
+  --primary: #7300FF;
+  --secondary: #2E2E2E;
+  --light-gray: #E4E0E0;
+  --primary-hover: #A366FF;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Set body styles */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #111111;
+  color: #E4E0E0;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom utility classes */
+.text-primary {
+  color: #7300FF;
+}
+
+.bg-primary {
+  background-color: #7300FF;
+}
+
+.bg-secondary {
+  background-color: #2E2E2E;
+}
+
+.text-light-gray {
+  color: #E4E0E0;
+}
+
+/* Button hover transitions */
+.btn-primary {
+  background-color: #7300FF;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #A366FF;
+  transform: scale(1.05);
+}
+
+/* Handwritten text style */
+.font-handwritten {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-weight: 400;
+}
+
+/* Scroll bar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7300FF;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A366FF;
 }

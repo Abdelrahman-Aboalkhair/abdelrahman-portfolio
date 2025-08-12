@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "company": "Resala Charity",
+        "role": "Volunteer Developer",
+        "date": "2024-2025",
+        "location": "Remote",
+        "desc": "Designed and started developing a Donor Management System to handle 150k+ donor records collected over 10 years. Built core features: donor CRUD, donation tracking, filtering/search. Focused on performance for multi-device use by volunteer data-entry teams.",
+        "tech": [
+            "React",
+            "Tailwind",
+            "RTK",
+            "Express",
+            "MongoDB",
+            "Redis",
+            "Docker",
+            "CI/CD"
+        ]
+    },
+    {
+        "id": 2,
+        "company": "Resala Charity",
+        "role": "Volunteer Developer",
+        "date": "2024-2025",
+        "location": "Remote",
+        "desc": "Designed and started developing a Donor Management System to handle 150k+ donor records collected over 10 years. Built core features: donor CRUD, donation tracking, filtering/search. Focused on performance for multi-device use by volunteer data-entry teams.",
+        "tech": [
+            "React",
+            "Tailwind",
+            "RTK",
+            "Express",
+            "MongoDB",
+            "Redis",
+            "Docker",
+            "CI/CD"
+        ]
+    }
+]

@@ -1,0 +1,83 @@
+**Prompt for Generating a Next.js Portfolio Website**
+
+You are an expert Next.js developer tasked with building a personal portfolio website exactly matching the provided UI designs (desktop and mobile versions). The site must be built using Next.js (latest stable version, e.g., 14.x) with Tailwind CSS for styling, no TypeScript (use plain JavaScript). This is purely frontend—no backend or full-stack features like API calls or email services. Use Framer Motion for on-reveal animations. The site must be fully responsive across all devices, with smooth scrolling and a sticky navigation bar (hamburger menu on mobile).
+
+**Project Overview**
+- The portfolio is a single-page landing site with sections: Hero, About, Projects, Experience, Contact.
+- Layout: Dark theme background (#111111). Use Poppins font family (import from Google Fonts if needed, with weights: 300 for light text, 400 for regular body, 500 for semi-bold, 600 for bold headings, 700 for extra-bold).
+- Colors: Primary accent #7300FF (for headings, buttons, links, dots); Dark gray #2E2E2E (for some descriptions and cards); Light gray #E4E0E0 (for lighter text and accents); Background #111111.
+- Responsiveness: Match the UI images—desktop has vertical stacking with wide layouts; mobile stacks everything vertically, uses hamburger menu, and adjusts text sizes/button placements for touch-friendly design. Use Tailwind's responsive classes (e.g., md:, lg: breakpoints). Key breakpoints: mobile (<768px), tablet (768-1024px), desktop (>1024px).
+- Navigation: Sticky top bar with logo "B." on left, links (About, Projects, Experience, Contact) centered or right-aligned on desktop. On mobile, collapse to hamburger icon that opens a menu. Links should smooth-scroll to sections using Next.js's Link or window.scrollTo with behavior: 'smooth'.
+- No accessibility requirements beyond basic semantic HTML.
+- Use placeholders for images (e.g., gray divs or simple SVG placeholders via next/image for optimization). Assume images will be added later in /public folder.
+- Performance: Use Next.js best practices—lazy loading via dynamic imports if needed, image optimization with next/image (e.g., priority for hero, sizes for responsiveness), minimal renders. Don't over-optimize; keep it simple.
+- Icons: Use react-icons library (e.g., FaLinkedin, FaGithub, FaUpwork for social links in About/Contact if shown in UI). Install if missing.
+- Animations: Framer Motion for on-scroll reveals (e.g., elements start hidden/opaque, fade-in/slide-in when in view). Also, simple button hover transitions (e.g., color shift from #7300FF to a lighter variant like #A366FF, scale 1.05).
+- Data: Use mock JSON files or arrays in code for Projects and Experience (sample data below; map to cards/lists). Static content for other sections.
+
+**Setup Instructions**
+- Assume a basic Next.js app is already created (via create-next-app). Organize folder structure like this:
+  - /app: Root layout and page.js (main page).
+  - /components: Subfolders or files for Hero.js, About.js, Projects.js, Experience.js, Contact.js, Navbar.js, Footer.js (if needed), Button.js (reusable).
+  - /data: JSON files like projects.json, experience.json.
+  - /public: For images, fonts, etc.
+  - /styles: globals.css for Tailwind imports and custom styles.
+- Install dependencies if missing (check package.json): 
+  - tailwindcss, postcss, autoprefixer (for Tailwind setup).
+  - framer-motion (for animations).
+  - react-icons (for icons).
+  - Run commands like: npm install framer-motion react-icons.
+- In globals.css: @tailwind base; @tailwind components; @tailwind utilities; Import Poppins: @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); Set body { font-family: 'Poppins', sans-serif; background: #111111; color: #E4E0E0; }.
+- Use App Router (app/page.js as entry).
+
+**UI Design Details (Match Exactly from Provided Images)**
+- **Hero Section**: 
+  - Desktop: Large heading "Hey, It's Body." (#7300FF, font-weight 700, size ~5rem), subheading "I'm a Full Stack Developer." (white, 3rem), description paragraph (light gray #E4E0E0, 1rem). Purple button "My Resume" (#7300FF bg, white text, rounded, hover transition).
+  - Mobile: Similar but smaller fonts, with side buttons like "Who am I?", "What I worked on?", "What I've been doing?", "How to reach out?" (purple dots, gray bg, rounded).
+  - Add "Let's connect!" button on mobile.
+- **About Section**:
+  - Heading "About." (#7300FF, 4rem).
+  - Text: "Hey! I'm Abdelrahman – if you haven't pieced that together yet. I'm a self-taught developer from Egypt with a passion for crafting full-stack web apps." (light gray, 1rem). Continue with MERN stack mention.
+  - Skills: "Use at projects" pills/buttons (gray bg #2E2E2E, white text, rounded, grid layout: Javascript, Typescript, SQL, NextJs, React, Redux, NodeJs, Express, MongoDB, Prisma, Postgres, Redis, CI/CD, GitHub Actions, Docker).
+  - "Use for fun": Similar pills (Three Js, React Three Fiber, Framer Motion).
+  - Links: "My links →" with icons (LinkedIn, GitHub, etc., purple color).
+  - Mobile: Stack vertically, skills in columns or rows.
+- **Projects Section**:
+  - Heading "Projects." (#7300FF, 4rem).
+  - Cards: Dark gray bg (#2E2E2E), rounded, with white placeholder image (handwritten "My Project :)"), title "E-Commerce" (purple), tech stack "Next.js - Typescript - Express Js - Prisma - Postgres" (gray), description "A feature-rich eCommerce platform with real-time chat, analytics, inventory management, and secure payments. Designed and built entirely by me. Learn more >" (light gray). 2-3 sample cards, grid on desktop (1-2 columns), stack on mobile.
+- **Experience Section**:
+  - Heading "Experience." (#7300FF, 4rem).
+  - Entries: Company "Resala Charity" (purple, bold), role "Volunteer Developer" (purple), date "2024-2025" (gray), location "Remote" (gray). Description "Designed and started developing a Donor Management System to handle 150k+ donor records collected over 10 years. Built core features: donor CRUD, donation tracking, filtering/search. Focused on performance for multi-device use by volunteer data-entry teams." (light gray). Tech pills: React, Tailwind, RTK, Express, MongoDB, Redis, Docker, CI/CD.
+  - 2-3 sample entries, stacked vertically.
+- **Contact Section**:
+  - Heading "Contact." (#7300FF, 4rem).
+  - Text: "Shoot me an email if you want to connect! You can also find me on LinkedIn if that's more your speed." (light gray).
+  - Email: "abdelrahman.aboalkhair@gmail.com" (purple, clickable mailto: link, e.g., <a href="mailto:abdelrahman.aboalkhair@gmail.com">).
+  - Include social icons if in UI (LinkedIn, etc.).
+  - Mobile: Centered, stacked.
+
+**Framer Motion Animations**
+- On-reveal: Use IntersectionObserver or Framer's whileInView. For each section/element: Start hidden (opacity:0, translateX/Y for slide), animate to visible (opacity:1, translate 0) on scroll into view. E.g., Hero heading: Cover with a purple box that fades/slides left to reveal text (duration 0.5s, ease 'easeOut'). Stagger children in lists/cards (delay 0.2s per item).
+- Buttons: Hover scale 1.05, color transition (bg from #7300FF to #A366FF, 0.3s).
+- Consistent across devices; disable/reduce on mobile if prefers-reduced-motion.
+
+**Data Handling**
+- Use arrays or import from /data/projects.json and /data/experience.json.
+- Sample Projects data:
+  [
+    { id:1, image: '/placeholder.png', title: 'E-Commerce', tech: 'Next.js - Typescript - Express Js - Prisma - Postgres', desc: 'A feature-rich eCommerce platform with real-time chat, analytics, inventory management, and secure payments. Designed and built entirely by me. Learn more >' },
+    // Add 1-2 more duplicates for samples
+  ]
+- Sample Experience data:
+  [
+    { id:1, company: 'Resala Charity', role: 'Volunteer Developer', date: '2024-2025', location: 'Remote', desc: 'Designed and started developing a Donor Management System to handle 150k+ donor records... (full desc as above)', tech: ['React', 'Tailwind', 'RTK', 'Express', 'MongoDB', 'Redis', 'Docker', 'CI/CD'] },
+    // Add 1-2 more
+  ]
+- Map data to components (e.g., grid for projects, list for experience).
+
+**Additional Features**
+- Smooth scroll: Use framer-motion or CSS for section transitions.
+- SEO: Basic meta tags (title: "Body's Portfolio", description: "Full Stack Developer").
+- Output: Generate full code files (page.js, components, data JSON, globals.css). Provide npm run dev instructions. Ensure no errors, test responsiveness.
+
+Generate the complete code now, matching the UI images exactly.

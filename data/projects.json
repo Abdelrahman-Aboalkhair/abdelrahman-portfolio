@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "image": "/placeholder.png",
+        "title": "E-Commerce",
+        "tech": "Next.js - Typescript - Express Js - Prisma - Postgres",
+        "desc": "A feature-rich eCommerce platform with real-time chat, analytics, inventory management, and secure payments. Designed and built entirely by me. Learn more >"
+    },
+    {
+        "id": 2,
+        "image": "/placeholder.png",
+        "title": "Chat app",
+        "tech": "React - Node.js - Socket.io - MongoDB",
+        "desc": "A real-time chat application with multiple rooms, user authentication, and message history. Built with modern web technologies for seamless communication."
+    }
+]
