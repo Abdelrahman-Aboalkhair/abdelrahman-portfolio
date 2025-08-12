@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { RiCloseFill, RiMenu3Fill } from "react-icons/ri";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -73,12 +74,9 @@ const Navbar = () => {
                     <div className="flex-shrink-0">
                         <button
                             onClick={() => scrollToSection('hero')}
-                            className={`text-2xl font-bold transition-colors duration-300 ${isActiveNavItem('hero')
-                                ? 'text-[#7300FF]'
-                                : 'text-white hover:text-[#7300FF]'
-                                }`}
+                            className={`text-2xl font-extrabold transition-colors duration-300 `}
                         >
-                            A <span className="text-primary">.</span>
+                            B <span className="text-primary">.</span>
                         </button>
                     </div>
 
@@ -91,19 +89,11 @@ const Navbar = () => {
                                     onClick={() => scrollToSection(item.id)}
                                     className={`px-3 py-2 text-sm font-medium transition-colors duration-300 relative ${isActiveNavItem(item.id)
                                         ? 'bg-muted/40 text-white border-b-2 border-primary'
-                                        : 'text-[#E4E0E0] hover:text-[#7300FF]'
+                                        : 'text-[#E4E0E0] hover:text-primary'
                                         }`}
                                 >
                                     {item.label}
-                                    {/* Active indicator dot */}
-                                    {/* {isActiveNavItem(item.id) && (
-                                        <motion.div
-                                            layoutId="activeIndicator"
-                                            className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-[#7300FF] rounded-full"
-                                            initial={false}
-                                            transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                                        />
-                                    )} */}
+
                                 </button>
                             ))}
                         </div>
@@ -111,43 +101,25 @@ const Navbar = () => {
 
                     {/* Resume Button */}
                     <div className="hidden md:block">
-                        <motion.button
+                        <motion.a
+                            href='https://drive.google.com/file/d/1M2QmESPSAYzRGxH1FMPLMHFeIsk5LGW4/view?usp=drive_link'
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="bg-[#7300FF] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#A366FF] transition-colors duration-300"
+                            className="flex gap-2 items-center bg-primary text-white px-6 py-2 rounded-sm font-medium 
+                             transition-colors duration-300"
                         >
-                            My Resume
-                        </motion.button>
+                            My resume
+                        </motion.a>
                     </div>
 
                     {/* Mobile Hamburger */}
                     <div className="md:hidden">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="text-[#E4E0E0] hover:text-[#7300FF] focus:outline-none"
+                            className="text-[#E4E0E0] hover:text-primary focus:outline-none"
                         >
-                            <svg
-                                className="h-6 w-6"
-                                stroke="currentColor"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                            >
-                                {isOpen ? (
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M6 18L18 6M6 6l12 12"
-                                    />
-                                ) : (
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M4 6h16M4 12h16M4 18h16"
-                                    />
-                                )}
-                            </svg>
+                            {isOpen ? <RiCloseFill size={24} /> : <RiMenu3Fill size={24} />}
+
                         </button>
                     </div>
                 </div>
@@ -167,21 +139,23 @@ const Navbar = () => {
                                 key={item.id}
                                 onClick={() => scrollToSection(item.id)}
                                 className={`block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-300 ${isActiveNavItem(item.id)
-                                    ? 'text-[#7300FF] bg-[#7300FF]/10'
-                                    : 'text-[#E4E0E0] hover:text-[#7300FF] hover:bg-[#7300FF]/5'
+                                    ? 'text-primary bg-primary/10'
+                                    : 'text-[#E4E0E0] hover:text-primary hover:bg-primary/5'
                                     }`}
                             >
                                 {item.label}
                             </button>
                         ))}
                         <div className="px-3 py-2">
-                            <motion.button
+                            <motion.a
+                                href='https://drive.google.com/file/d/1M2QmESPSAYzRGxH1FMPLMHFeIsk5LGW4/view?usp=drive_link'
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="bg-[#7300FF] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#A366FF] transition-colors duration-300 w-full"
+                                className="bg-primary text-white px-4 py-2 rounded-sm
+                                 font-medium hover:bg-primary-hover transition-colors duration-300 w-full"
                             >
-                                My Resume
-                            </motion.button>
+                                My resume
+                            </motion.a>
                         </div>
                     </div>
                 </motion.div>

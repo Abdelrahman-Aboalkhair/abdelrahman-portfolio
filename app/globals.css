@@ -13,7 +13,7 @@
 @theme {
   --color-primary: #7300FF;
   --color-secondary: #2E2E2E;
-  --color-light-gray: #E4E0E0;
+  --color-light-gray: #9B9B9B;
   --color-primary-hover: #A366FF;
   --color-background: #111111;
   --color-foreground: #E4E0E0;
@@ -53,7 +53,7 @@ html {
 
 /* Scroll bar styling */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -62,7 +62,7 @@ html {
 
 ::-webkit-scrollbar-thumb {
   background: #7300FF;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {

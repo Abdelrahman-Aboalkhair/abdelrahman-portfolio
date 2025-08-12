@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import projectsData from '../data/projects.json';
+import SectionLayout from './SectionLayout';
 
 const Projects = () => {
     const containerVariants = {
@@ -24,71 +25,69 @@ const Projects = () => {
     };
 
     return (
-        <section id="projects" className="py-20 bg-[#111111]">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionLayout id="projects">
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={containerVariants}
+            >
+                {/* Section Title */}
+                <motion.h2
+                    className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#7300FF] mb-12"
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
+                    Projects<span className="text-[#7300FF]">.</span>
+                </motion.h2>
+
+                {/* Projects Grid */}
                 <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.3 }}
+                    className="grid md:grid-cols-2 gap-8"
                     variants={containerVariants}
                 >
-                    {/* Section Title */}
-                    <motion.h2
-                        className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#7300FF] mb-12"
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        Projects<span className="text-[#7300FF]">.</span>
-                    </motion.h2>
-
-                    {/* Projects Grid */}
-                    <motion.div
-                        className="grid md:grid-cols-2 gap-8"
-                        variants={containerVariants}
-                    >
-                        {projectsData.map((project) => (
-                            <motion.div
-                                key={project.id}
-                                variants={cardVariants}
-                                whileHover={{ y: -10 }}
-                                className="bg-[#2E2E2E] rounded-xl overflow-hidden hover:bg-[#3E3E3E] transition-colors duration-300"
-                            >
-                                {/* Project Image Placeholder */}
-                                <div className="h-48 bg-white flex items-center justify-center">
-                                    <div className="text-black text-2xl font-handwritten">
-                                        My Project :)
-                                    </div>
+                    {projectsData.map((project) => (
+                        <motion.div
+                            key={project.id}
+                            variants={cardVariants}
+                            whileHover={{ y: -10 }}
+                            className="bg-[#2E2E2E] rounded-xl overflow-hidden hover:bg-[#3E3E3E] transition-colors duration-300"
+                        >
+                            {/* Project Image Placeholder */}
+                            <div className="h-48 bg-white flex items-center justify-center">
+                                <div className="text-black text-2xl font-handwritten">
+                                    My Project :)
                                 </div>
+                            </div>
 
-                                {/* Project Content */}
-                                <div className="p-6">
-                                    <h3 className="text-2xl font-bold text-[#7300FF] mb-2">
-                                        {project.title}
-                                    </h3>
+                            {/* Project Content */}
+                            <div className="p-6">
+                                <h3 className="text-2xl font-bold text-[#7300FF] mb-2">
+                                    {project.title}
+                                </h3>
 
-                                    <p className="text-[#E4E0E0] mb-4 text-sm">
-                                        {project.tech}
-                                    </p>
+                                <p className="text-[#E4E0E0] mb-4 text-sm">
+                                    {project.tech}
+                                </p>
 
-                                    <p className="text-[#E4E0E0] leading-relaxed">
-                                        {project.desc}
-                                    </p>
+                                <p className="text-[#E4E0E0] leading-relaxed">
+                                    {project.desc}
+                                </p>
 
-                                    {/* Status Dots */}
-                                    <div className="flex space-x-2 mt-4">
-                                        <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
-                                        <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
-                                        <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
-                                    </div>
+                                {/* Status Dots */}
+                                <div className="flex space-x-2 mt-4">
+                                    <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
+                                    <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
+                                    <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
                                 </div>
-                            </motion.div>
-                        ))}
-                    </motion.div>
+                            </div>
+                        </motion.div>
+                    ))}
                 </motion.div>
-            </div>
-        </section>
+            </motion.div>
+        </SectionLayout>
     );
 };
 
