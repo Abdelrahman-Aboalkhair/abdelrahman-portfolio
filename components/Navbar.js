@@ -1,10 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState('hero');
 
     const scrollToSection = (sectionId) => {
         const element = document.getElementById(sectionId);
@@ -21,6 +22,49 @@ const Navbar = () => {
         { label: 'Contact', id: 'contact' },
     ];
 
+    // Intersection Observer to track active section
+    useEffect(() => {
+        const sections = ['hero', 'about', 'projects', 'experience', 'contact'];
+        const observers = new Map();
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -60% 0px', // Trigger when section is 20% from top
+            threshold: 0
+        };
+
+        const handleIntersect = (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setActiveSection(entry.target.id);
+                }
+            });
+        };
+
+        // Create observers for each section
+        sections.forEach((sectionId) => {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const observer = new IntersectionObserver(handleIntersect, observerOptions);
+                observer.observe(element);
+                observers.set(sectionId, observer);
+            }
+        });
+
+        // Cleanup observers on unmount
+        return () => {
+            observers.forEach((observer) => observer.disconnect());
+        };
+    }, []);
+
+    // Helper function to check if a nav item is active
+    const isActiveNavItem = (itemId) => {
+        // If we're on hero section and this is the logo, it's active
+        if (activeSection === 'hero' && itemId === 'hero') return true;
+        // Otherwise check if the item ID matches the active section
+        return activeSection === itemId;
+    };
+
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 bg-[#111111]/90 backdrop-blur-sm border-b border-[#2E2E2E]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,9 +73,12 @@ const Navbar = () => {
                     <div className="flex-shrink-0">
                         <button
                             onClick={() => scrollToSection('hero')}
-                            className="text-2xl font-bold text-white hover:text-[#7300FF] transition-colors duration-300"
+                            className={`text-2xl font-bold transition-colors duration-300 ${isActiveNavItem('hero')
+                                ? 'text-[#7300FF]'
+                                : 'text-white hover:text-[#7300FF]'
+                                }`}
                         >
-                            B.
+                            A <span className="text-primary">.</span>
                         </button>
                     </div>
 
@@ -42,9 +89,21 @@ const Navbar = () => {
                                 <button
                                     key={item.id}
                                     onClick={() => scrollToSection(item.id)}
-                                    className="text-[#E4E0E0] hover:text-[#7300FF] px-3 py-2 text-sm font-medium transition-colors duration-300"
+                                    className={`px-3 py-2 text-sm font-medium transition-colors duration-300 relative ${isActiveNavItem(item.id)
+                                        ? 'bg-muted/40 text-white border-b-2 border-primary'
+                                        : 'text-[#E4E0E0] hover:text-[#7300FF]'
+                                        }`}
                                 >
                                     {item.label}
+                                    {/* Active indicator dot */}
+                                    {/* {isActiveNavItem(item.id) && (
+                                        <motion.div
+                                            layoutId="activeIndicator"
+                                            className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-[#7300FF] rounded-full"
+                                            initial={false}
+                                            transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                                        />
+                                    )} */}
                                 </button>
                             ))}
                         </div>
@@ -107,7 +166,10 @@ const Navbar = () => {
                             <button
                                 key={item.id}
                                 onClick={() => scrollToSection(item.id)}
-                                className="text-[#E4E0E0] hover:text-[#7300FF] block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-300"
+                                className={`block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-300 ${isActiveNavItem(item.id)
+                                    ? 'text-[#7300FF] bg-[#7300FF]/10'
+                                    : 'text-[#E4E0E0] hover:text-[#7300FF] hover:bg-[#7300FF]/5'
+                                    }`}
                             >
                                 {item.label}
                             </button>

@@ -10,6 +10,16 @@
   --primary-hover: #A366FF;
 }
 
+@theme {
+  --color-primary: #7300FF;
+  --color-secondary: #2E2E2E;
+  --color-light-gray: #E4E0E0;
+  --color-primary-hover: #A366FF;
+  --color-background: #111111;
+  --color-foreground: #E4E0E0;
+  --color-muted: #232323
+}
+
 /* Set body styles */
 body {
   background: #111111;
@@ -22,23 +32,6 @@ body {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
-}
-
-/* Custom utility classes */
-.text-primary {
-  color: #7300FF;
-}
-
-.bg-primary {
-  background-color: #7300FF;
-}
-
-.bg-secondary {
-  background-color: #2E2E2E;
-}
-
-.text-light-gray {
-  color: #E4E0E0;
 }
 
 /* Button hover transitions */
