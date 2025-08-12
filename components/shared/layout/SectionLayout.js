@@ -4,7 +4,7 @@ const SectionLayout = ({
   className = "",
   containerClassName = "",
   paddingY = "py-20",
-  backgroundColor = "bg-[#111111]",
+  backgroundColor,
   maxWidth = "max-w-7xl",
 }) => {
   return (

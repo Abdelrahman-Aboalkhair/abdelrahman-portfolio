@@ -1,15 +1,17 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import projectsData from "../../../data/projects.json";
+import { useTranslation } from "react-i18next";
 import SectionLayout from "../../shared/layout/SectionLayout";
 import SectionHeader from "../../shared/ui/SectionHeader";
 import ProjectCard from "./ProjectCard";
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
+  const [projectsData, setProjectsData] = useState([]);
+  const { i18n, t } = useTranslation();
   const INITIAL_PROJECTS_COUNT = 4;
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -39,6 +41,24 @@ const Projects = () => {
     },
   };
 
+  // Load language-specific projects data
+  useEffect(() => {
+    const loadProjectsData = async () => {
+      try {
+        const data = await import(
+          `../../../data/projects.${i18n.language}.json`
+        );
+        setProjectsData(data.default);
+      } catch (error) {
+        // Fallback to English if language-specific file doesn't exist
+        const fallbackData = await import("../../../data/projects.en.json");
+        setProjectsData(fallbackData.default);
+      }
+    };
+
+    loadProjectsData();
+  }, [i18n.language]);
+
   // Get projects to display based on showAll state
   const displayedProjects = showAll
     ? projectsData
@@ -58,7 +78,11 @@ const Projects = () => {
         viewport={{ once: true, amount: 0.3 }}
         variants={containerVariants}
       >
-        <SectionHeader title="Projects" align="right" overlayDelay={0.3} />
+        <SectionHeader
+          title={t("projects.title")}
+          align="right"
+          overlayDelay={0.3}
+        />
 
         {/* Projects Grid */}
         <motion.div
@@ -91,8 +115,8 @@ const Projects = () => {
             >
               <span>
                 {showAll
-                  ? "Show Less Projects"
-                  : `Show All Projects (${projectsData.length})`}
+                  ? t("projects.showLess")
+                  : `${t("projects.showAll")} (${projectsData.length})`}
               </span>
               {showAll ? (
                 <ChevronUp className="w-5 h-5 group-hover:-translate-y-1 transition-transform" />

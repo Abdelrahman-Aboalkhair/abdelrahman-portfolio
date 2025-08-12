@@ -15,7 +15,7 @@ const SkillSection = ({
   return (
     <div className="w-full">
       <OverlayReveal>
-        <h3 className="flex items-center gap-2 text-lg sm:text-xl font-bold text-white mb-4">
+        <h3 className="flex items-center gap-2 text-lg sm:text-xl font-bold text-foreground mb-4">
           <div className="bg-primary px-2 py-1 text-sm rounded-sm flex-shrink-0">
             {icon}
           </div>

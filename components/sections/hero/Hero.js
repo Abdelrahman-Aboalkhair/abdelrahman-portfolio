@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 import SectionLayout from "../../shared/layout/SectionLayout";
 import Terminal from "./Terminal";
 import HeroContent from "./HeroContent";
+import { useDevMode } from "../../../contexts/DevModeContext";
 
 const Hero = () => {
+  const { isDevMode } = useDevMode();
+
   return (
     <SectionLayout
       id="hero"
@@ -13,19 +16,32 @@ const Hero = () => {
       paddingY=""
       backgroundColor=""
     >
-      <div className="flex flex-col lg:flex-row items-center justify-between">
+      <div
+        className={`flex flex-col lg:flex-row items-center ${
+          isDevMode ? "justify-between" : "justify-center"
+        } w-full`}
+      >
         {/* Main Content */}
-        <HeroContent />
-
-        {/* Interactive Terminal */}
-        <motion.div
-          className="w-full lg:w-3/5 mt-8 lg:mt-0"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
+        <div
+          className={`${isDevMode ? "lg:w-2/5" : "lg:w-auto"} ${
+            isDevMode ? "" : "text-center"
+          }`}
         >
-          <Terminal />
-        </motion.div>
+          <HeroContent />
+        </div>
+
+        {/* Interactive Terminal - Only show in dev mode */}
+        {isDevMode && (
+          <motion.div
+            className="w-full lg:w-3/5 mt-8 lg:mt-0"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 50 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+          >
+            <Terminal />
+          </motion.div>
+        )}
       </div>
     </SectionLayout>
   );

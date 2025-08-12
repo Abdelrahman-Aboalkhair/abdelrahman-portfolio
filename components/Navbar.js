@@ -3,10 +3,13 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { RiCloseFill, RiMenu3Fill } from "react-icons/ri";
+import { useTranslation } from "react-i18next";
+import ThemeToggle from "./shared/ui/ThemeToggle";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
+  const { t } = useTranslation();
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -17,10 +20,10 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { label: "About", id: "about" },
-    { label: "Projects", id: "projects" },
-    { label: "Experience", id: "experience" },
-    { label: "Contact", id: "contact" },
+    { label: t("nav.about"), id: "about" },
+    { label: t("nav.projects"), id: "projects" },
+    { label: t("nav.experience"), id: "experience" },
+    { label: t("nav.contact"), id: "contact" },
   ];
 
   // Intersection Observer to track active section
@@ -70,7 +73,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#111111]/90 backdrop-blur-sm border-b border-[#2E2E2E]">
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -92,14 +95,19 @@ const Navbar = () => {
                   onClick={() => scrollToSection(item.id)}
                   className={`px-4 py-2 text-sm font-medium transition-colors duration-300 relative ${
                     isActiveNavItem(item.id)
-                      ? "bg-muted/40 text-white border-b-2 border-primary"
-                      : "text-[#E4E0E0] hover:text-primary"
+                      ? "bg-muted/40 text-foreground border-b-2 border-primary"
+                      : "text-foreground/80 hover:text-primary"
                   }`}
                 >
                   {item.label}
                 </button>
               ))}
             </div>
+          </div>
+
+          {/* Theme Toggle - Keep only theme in navbar */}
+          <div className="hidden md:flex items-center gap-4">
+            <ThemeToggle />
           </div>
 
           {/* Resume Button */}
@@ -119,7 +127,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-[#E4E0E0] hover:text-primary focus:outline-none"
+              className="text-foreground/80 hover:text-primary focus:outline-none"
             >
               {isOpen ? <RiCloseFill size={24} /> : <RiMenu3Fill size={24} />}
             </button>
@@ -133,7 +141,7 @@ const Navbar = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-[#111111] border-t border-[#2E2E2E]"
+          className="md:hidden bg-background border-t border-border"
         >
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
@@ -143,12 +151,21 @@ const Navbar = () => {
                 className={`block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-300 ${
                   isActiveNavItem(item.id)
                     ? "text-primary bg-primary/10"
-                    : "text-[#E4E0E0] hover:text-primary hover:bg-primary/5"
+                    : "text-foreground/80 hover:text-primary hover:bg-primary/5"
                 }`}
               >
                 {item.label}
               </button>
             ))}
+
+            {/* Mobile Theme Toggle - Keep only theme in mobile menu */}
+            <div className="px-3 py-2 border-t border-border mt-2">
+              <div className="flex items-center justify-between">
+                <span className="text-foreground/60 text-sm">Theme</span>
+                <ThemeToggle />
+              </div>
+            </div>
+
             <div className="px-3 py-2">
               <motion.a
                 href="https://drive.google.com/file/d/1M2QmESPSAYzRGxH1FMPLMHFeIsk5LGW4/view?usp=drive_link"
@@ -157,7 +174,7 @@ const Navbar = () => {
                 className="bg-primary text-white px-4 py-2 rounded-sm
                                  font-medium hover:bg-primary-hover transition-colors duration-300 w-full"
               >
-                My resume
+                {t("nav.resume")}
               </motion.a>
             </div>
           </div>

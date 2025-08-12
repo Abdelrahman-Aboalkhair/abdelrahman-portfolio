@@ -1,13 +1,105 @@
 @import "tailwindcss";
 
-/* Root variables with dark theme colors */
+/* Root variables with theme colors */
 :root {
+  /* Dark theme (default) */
   --background: #111111;
   --foreground: #e4e0e0;
   --primary: #7300ff;
   --secondary: #2e2e2e;
   --light-gray: #e4e0e0;
   --primary-hover: #a366ff;
+  --muted: #232323;
+  --border: #2e2e2e;
+  --card-bg: #1a1a1a;
+  --text-muted: #9b9b9b;
+}
+
+/* Light theme */
+[data-theme="light"] {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --primary: #7300ff;
+  --secondary: #f5f5f5;
+  --light-gray: #6b7280;
+  --primary-hover: #a366ff;
+  --muted: #f8f9fa;
+  --border: #e5e7eb;
+  --card-bg: #ffffff;
+  --text-muted: #6b7280;
+}
+
+/* Font families */
+.font-poppins {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.font-cairo {
+  font-family: var(--font-cairo), sans-serif;
+}
+
+/* RTL support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+/* Flex direction reversal for RTL */
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .lg.flex-row {
+  flex-direction: row-reverse;
+}
+
+/* Space utilities for RTL */
+[dir="rtl"] .space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+[dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+[dir="rtl"] .space-x-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+  margin-right: calc(2rem * var(--tw-space-x-reverse));
+  margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+/* Gap utilities work better for RTL, but spacing overrides for existing classes */
+[dir="rtl"] .ml-10 {
+  margin-left: 0;
+  margin-right: 2.5rem;
+}
+
+[dir="rtl"] .mr-2 {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+/* Text alignment utilities */
+[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+[dir="rtl"] .text-right {
+  text-align: left;
+}
+
+/* Border utilities */
+[dir="rtl"] .border-l {
+  border-left: 0;
+  border-right-width: 1px;
+}
+
+[dir="rtl"] .border-r {
+  border-right: 0;
+  border-left-width: 1px;
 }
 
 @theme {
@@ -18,15 +110,19 @@
   --color-background: #111111;
   --color-foreground: #e4e0e0;
   --color-muted: #232323;
+  --color-border: #2e2e2e;
+  --color-card-bg: #1a1a1a;
+  --color-text-muted: #9b9b9b;
 }
 
 /* Set body styles */
 body {
-  background: #111111;
-  color: #e4e0e0;
+  background: var(--background);
+  color: var(--foreground);
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Smooth scrolling */
@@ -57,16 +153,16 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #111111;
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #7300ff;
+  background: var(--primary);
   border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a366ff;
+  background: var(--primary-hover);
 }
 
 ::selection {

@@ -3,11 +3,13 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 import ProjectModal from "./ProjectModal";
 import { FaChevronRight } from "react-icons/fa";
 
 const ProjectCard = ({ project, variants }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t } = useTranslation();
 
   const handleLearnMore = () => {
     setIsModalOpen(true);
@@ -19,7 +21,7 @@ const ProjectCard = ({ project, variants }) => {
         variants={variants}
         whileHover={{ y: -8, rotate: 0.5, scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        className="group relative border-2 border-muted backdrop-blur-xl rounded-md overflow-hidden cursor-pointer hover:border-white/30 transition-colors duration-300"
+        className="group relative border-2 border-border backdrop-blur-xl rounded-md overflow-hidden cursor-pointer hover:border-primary/30 transition-colors duration-300"
         onClick={handleLearnMore}
         role="button"
         tabIndex={0}
@@ -53,8 +55,8 @@ const ProjectCard = ({ project, variants }) => {
             {project.tech}
           </p>
 
-          <p className="text-white/80 leading-relaxed mb-4 text-sm sm:text-base line-clamp-3">
-            {project.desc.replace(" Learn more >", "")}
+          <p className="text-foreground/80 leading-relaxed mb-4 text-sm sm:text-base line-clamp-3">
+            {project.desc.replace(` ${t("projects.learnMore")} >`, "")}
           </p>
 
           {/* Learn More Button */}
@@ -62,7 +64,7 @@ const ProjectCard = ({ project, variants }) => {
             onClick={handleLearnMore}
             className="flex items-center gap-2 text-[#7300FF] hover:text-[#8533ff] font-medium transition-colors group/btn text-sm sm:text-base"
           >
-            <span>Learn more</span>
+            <span>{t("projects.learnMore")}</span>
             <FaChevronRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 transition-transform" />
           </button>
         </div>

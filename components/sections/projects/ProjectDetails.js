@@ -1,8 +1,10 @@
 "use client";
 
 import { Lightbulb, Code, Calendar, Github, ExternalLink } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ProjectDetails = ({ project }) => {
+  const { t } = useTranslation();
   return (
     <div className="grid md:grid-cols-2 gap-8">
       {/* Project Description */}
@@ -11,7 +13,7 @@ const ProjectDetails = ({ project }) => {
           <div className="flex items-center gap-2 mb-3">
             <Lightbulb className="w-5 h-5 text-[#7300FF]" />
             <h3 className="text-xl font-semibold text-white">
-              About This Project
+              {t("projects.aboutProject")}
             </h3>
           </div>
           <p className="text-white/80 leading-relaxed">
@@ -22,7 +24,9 @@ const ProjectDetails = ({ project }) => {
         <div>
           <div className="flex items-center gap-2 mb-3">
             <Code className="w-5 h-5 text-[#7300FF]" />
-            <h3 className="text-xl font-semibold text-white">Key Features</h3>
+            <h3 className="text-xl font-semibold text-white">
+              {t("projects.keyFeatures")}
+            </h3>
           </div>
           <ul className="text-white/80 space-y-2 max-h-48 overflow-y-auto">
             {project.features ? (
@@ -47,20 +51,21 @@ const ProjectDetails = ({ project }) => {
           <div className="flex items-center gap-2 mb-3">
             <Calendar className="w-5 h-5 text-[#7300FF]" />
             <h3 className="text-xl font-semibold text-white">
-              Project Timeline
+              {t("projects.timeline")}
             </h3>
           </div>
           <p className="text-white/80">
-            Development Period: {project.timeline || "3 months"}
+            {t("projects.developmentPeriod")}:{" "}
+            {project.timeline || t("projects.defaultTimeline")}
           </p>
           <p className="text-white/80">
-            Status: {project.status || "Completed"}
+            {t("projects.status")}: {project.status || t("projects.completed")}
           </p>
         </div>
 
         <div>
           <h3 className="text-xl font-semibold text-white mb-3">
-            Technical Highlights
+            {t("projects.technicalHighlights")}
           </h3>
           <ul className="text-white/80 space-y-2 max-h-48 overflow-y-auto">
             {project.techHighlights ? (
@@ -88,7 +93,7 @@ const ProjectDetails = ({ project }) => {
               className="flex items-center justify-center gap-2 px-6 py-3 bg-[#7300FF] hover:bg-[#5a00cc] text-white rounded-lg transition-colors"
             >
               <Github className="w-5 h-5" />
-              View Code
+              {t("projects.viewCode")}
             </a>
           )}
           {project.demoUrl && (
@@ -99,7 +104,7 @@ const ProjectDetails = ({ project }) => {
               className="flex items-center justify-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-lg border border-white/20 transition-colors"
             >
               <ExternalLink className="w-5 h-5" />
-              Live Demo
+              {t("projects.liveDemo")}
             </a>
           )}
         </div>

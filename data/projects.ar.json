@@ -1,0 +1,281 @@
+[
+  {
+    "id": 1,
+    "image": "/projects/ss-ecommerce/homepage.png",
+    "title": "منصة التجارة الإلكترونية SS",
+    "tech": "Next.js - TypeScript - Express.js - Prisma - PostgreSQL - Redis - Socket.IO",
+    "desc": "منصة تجارة إلكترونية حديثة متكاملة تتضمن مصادقة المستخدمين، إدارة المنتجات، الدردشة المباشرة، لوحة تحليلات، معالجة المدفوعات عبر Stripe، ومكالمات فيديو WebRTC. مبنيّة باستخدام Docker للنشر السلس. اعرف المزيد >",
+    "gallery": [
+      {
+        "image": "/projects/ss-ecommerce/homepage.png",
+        "title": "الصفحة الرئيسية",
+        "description": "صفحة هبوط حديثة مع قسم رئيسي وعرض المنتجات"
+      },
+      {
+        "image": "/projects/ss-ecommerce/dashboard_overview.png",
+        "title": "لوحة تحكم المدير",
+        "description": "نظرة شاملة مع التحليلات والمقاييس الرئيسية"
+      },
+      {
+        "image": "/projects/ss-ecommerce/analytics_dashboard.png",
+        "title": "لوحة التحليلات",
+        "description": "رسوم بيانية تفاعلية وتصور البيانات للرؤى التجارية"
+      },
+      {
+        "image": "/projects/ss-ecommerce/products_dashboard.png",
+        "title": "إدارة المنتجات",
+        "description": "عمليات CRUD لكتالوج المنتجات والمخزون"
+      },
+      {
+        "image": "/projects/ss-ecommerce/product_detail.png",
+        "title": "صفحة تفاصيل المنتج",
+        "description": "عرض تفصيلي للمنتج مع المتغيرات وإضافة إلى السلة"
+      },
+      {
+        "image": "/projects/ss-ecommerce/cart.png",
+        "title": "سلة التسوق",
+        "description": "سلة تفاعلية مع إدارة الكمية وتدفق الدفع"
+      },
+      {
+        "image": "/projects/ss-ecommerce/payment.png",
+        "title": "تكامل المدفوعات",
+        "description": "معالجة المدفوعات عبر Stripe مع دفع آمن"
+      },
+      {
+        "image": "/projects/ss-ecommerce/your_orders.png",
+        "title": "إدارة الطلبات",
+        "description": "تاريخ الطلبات وتتبع الحالة للعملاء"
+      },
+      {
+        "image": "/projects/ss-ecommerce/track_your_order.png",
+        "title": "تتبع الطلبات",
+        "description": "تتبع الشحنات المباشر مع تحديثات الحالة"
+      }
+    ],
+    "features": [
+      "مصادقة المستخدمين مع تسجيل الدخول الاجتماعي (Google, Facebook, Twitter, Apple)",
+      "دردشة مباشرة ومكالمات فيديو مع Socket.IO و WebRTC",
+      "لوحة تحليلات متقدمة مع رسوم بيانية تفاعلية",
+      "تكامل المدفوعات مع Stripe و webhooks",
+      "نظام إدارة المنتجات القائم على المتغيرات",
+      "تتبع الطلبات وإدارة الشحنات",
+      "التحكم في الوصول القائم على الأدوار (مستخدم، مدير، مدير عام)",
+      "إدارة الصور عبر Cloudinary",
+      "واجهات برمجة RESTful و GraphQL",
+      "حاويات Docker"
+    ],
+    "techHighlights": [
+      "TypeScript للأمان النوعي المتكامل",
+      "Prisma ORM مع قاعدة بيانات PostgreSQL",
+      "Redis للتخزين المؤقت وإدارة الجلسات",
+      "عرض الخادم مع Next.js",
+      "تصميم متجاوب مع Tailwind CSS",
+      "تسجيل Winston ومعالجة الأخطاء",
+      "طوابير Bull للمعالجة الخلفية"
+    ],
+    "timeline": "6 أشهر",
+    "status": "مكتمل",
+    "demoUrl": "https://ss-ecommerce-one.vercel.app",
+    "videoUrl": "https://youtu.be/qJDXcQ_sxSI",
+    "codeUrl": "https://github.com/Abdelrahman-Aboalkhair/ecommerce.git"
+  },
+  {
+    "id": 2,
+    "image": "/projects/inventory-system/inventory_dashboard.png",
+    "title": "إدارة المخزون القائمة على المتغيرات",
+    "tech": "Next.js - TypeScript - Express.js - Prisma - PostgreSQL",
+    "desc": "نظام إدارة مخزون متقدم مع تنظيم المنتجات القائم على المتغيرات، إدارة السمات، وتتبع المخزون المباشر. يتضمن تصفية ديناميكية وضوابط إدارية شاملة. اعرف المزيد >",
+    "gallery": [
+      {
+        "image": "/projects/inventory-system/inventory_dashboard.png",
+        "title": "لوحة تحكم المخزون",
+        "description": "اللوحة الرئيسية تعرض مستويات المخزون والتنبيهات ونظرة عامة على المخزون"
+      },
+      {
+        "image": "/projects/inventory-system/attributes_dashboard.png",
+        "title": "إدارة السمات",
+        "description": "نظام السمات الديناميكي لإدارة متغيرات المنتجات والخصائص"
+      }
+    ],
+    "features": [
+      "إدارة المنتجات القائمة على المتغيرات (الحجم، اللون، تركيبات المواد)",
+      "نظام السمات الديناميكي مع القوائم المنسدلة المعتمدة",
+      "تتبع المخزون المباشر وتنبيهات المخزون",
+      "قدرات التصفية والبحث المتقدمة",
+      "عمليات مجمعة لإدارة المخزون",
+      "إنشاء وإدارة SKU",
+      "تنظيم المنتجات القائم على الفئات",
+      "تقارير وتحليلات شاملة"
+    ],
+    "techHighlights": [
+      "تصميم قاعدة بيانات علائقية معقدة مع Prisma",
+      "إنشاء النماذج الديناميكية للسمات",
+      "تحديثات مباشرة مع واجهة مستخدم متفائلة",
+      "أنواع TypeScript متقدمة للمتغيرات",
+      "استعلامات قاعدة بيانات فعالة مع joins",
+      "هندسة قائمة على المكونات"
+    ],
+    "timeline": "شهران",
+    "status": "مكتمل"
+  },
+  {
+    "id": 3,
+    "image": "/projects/chat-app/user_chat.png",
+    "title": "تطبيق الدردشة المباشرة",
+    "tech": "Socket.IO - WebRTC - Express.js - Next.js - TypeScript",
+    "desc": "منصة اتصال مباشر شاملة تتضمن الرسائل الفورية، مكالمات الفيديو، وتكامل دعم العملاء. مبني كجزء من نظام التجارة الإلكترونية مع تجربة مستخدم سلسة. اعرف المزيد >",
+    "gallery": [
+      {
+        "image": "/projects/chat-app/user_chat.png",
+        "title": "واجهة دردشة المستخدم",
+        "description": "واجهة دردشة نظيفة وبديهية للتواصل مع العملاء"
+      },
+      {
+        "image": "/projects/chat-app/dashboard_chat.png",
+        "title": "لوحة تحكم الدردشة للمدير",
+        "description": "واجهة إدارية لإدارة محادثات دعم العملاء"
+      }
+    ],
+    "features": [
+      "رسائل ثنائية الاتجاه مباشرة مع Socket.IO",
+      "مكالمات فيديو وصوت WebRTC",
+      "دردشة دعم العملاء للمدير",
+      "استمرارية تاريخ الرسائل",
+      "مؤشرات الحالة المتصلة",
+      "ضوابط المكالمة (كتم الصوت، تبديل الكاميرا، مشاركة الشاشة)",
+      "إدارة غرف الدردشة",
+      "التكامل مع نظام مصادقة المستخدمين"
+    ],
+    "techHighlights": [
+      "Socket.IO للاتصال المباشر",
+      "تنفيذ WebRTC للمكالمات من نظير إلى نظير",
+      "React hooks مخصصة لإدارة المكالمات",
+      "تحديثات قاعدة البيانات المباشرة",
+      "هندسة قائمة على الأحداث",
+      "مكونات واجهة الدردشة المتجاوبة"
+    ],
+    "timeline": "شهران",
+    "status": "مكتمل"
+  },
+  {
+    "id": 4,
+    "image": "/placeholder.png",
+    "title": "نظام حجز المطاعم",
+    "tech": "React - Node.js - Express.js - MongoDB - Stripe",
+    "desc": "نظام حجز مطاعم شامل مع إدارة الطاولات، التوفر المباشر، إشعارات العملاء، وتكامل المدفوعات. يتضمن دعم المواقع المتعددة ولوحة تحليلات. اعرف المزيد >",
+    "gallery": [
+      {
+        "image": "/placeholder.png",
+        "title": "واجهة الحجز",
+        "description": "نظام حجز سهل الاستخدام مع تكامل التقويم"
+      },
+      {
+        "image": "/placeholder.png",
+        "title": "إدارة الطاولات",
+        "description": "لوحة تحكم المطعم لإدارة الطاولات والحجوزات"
+      }
+    ],
+    "features": [
+      "فحص توفر الطاولات المباشر",
+      "دعم المواقع المتعددة للمطاعم",
+      "نظام إشعارات العملاء (SMS/Email)",
+      "تكامل المدفوعات مع Stripe",
+      "تصور تخطيط الطاولات",
+      "تحليلات الحجز والتقارير",
+      "نظام مراجعات وتقييمات العملاء",
+      "إدارة قائمة الانتظار"
+    ],
+    "techHighlights": [
+      "تحديثات مباشرة مع Socket.IO",
+      "واجهة مستخدم متفائلة للتغذية الراجعة الفورية",
+      "خوارزميات تقويم فعالة",
+      "تصميم API RESTful",
+      "خطوط تجميع MongoDB",
+      "تصميم متجاوب مع نهج الهاتف أولاً"
+    ],
+    "timeline": "3 أشهر",
+    "status": "قيد التطوير",
+    "codeUrl": "https://github.com/Abdelrahman-Aboalkhair/restaurant-booking.git"
+  },
+  {
+    "id": 5,
+    "image": "/placeholder.png",
+    "title": "منصة المدونة التقنية",
+    "tech": "Next.js - TypeScript - Sanity CMS - Tailwind CSS",
+    "desc": "منصة مدونة حديثة تركز على المحتوى التقني مع دعم Markdown، تمييز الصيغة، تحسين SEO، ونظام إدارة المحتوى. تتضمن ملفات المؤلفين ونظام التعليقات. اعرف المزيد >",
+    "gallery": [
+      {
+        "image": "/placeholder.png",
+        "title": "الصفحة الرئيسية للمدونة",
+        "description": "تخطيط مدونة نظيف وحديث مع المقالات المميزة"
+      },
+      {
+        "image": "/placeholder.png",
+        "title": "قارئ المقالات",
+        "description": "تجربة قراءة محسنة مع تمييز الصيغة"
+      }
+    ],
+    "features": [
+      "دعم محتوى Markdown مع تمييز الصيغة",
+      "تحسين SEO مع meta tags",
+      "تكامل نظام إدارة المحتوى",
+      "صفحات ملفات المؤلفين",
+      "نظام التعليقات مع الإشراف",
+      "تصنيف المقالات القائم على العلامات",
+      "وظيفة البحث",
+      "الاشتراك في النشرة الإخبارية"
+    ],
+    "techHighlights": [
+      "توليد الموقع الثابت مع Next.js",
+      "تكامل CMS بدون رأس مع Sanity",
+      "تحسين SEO متقدم",
+      "تمييز صيغة الكود",
+      "تحسين الصور والتحميل الكسول",
+      "قدرات PWA"
+    ],
+    "timeline": "شهران",
+    "status": "مكتمل",
+    "demoUrl": "https://tech-blog-platform.vercel.app",
+    "codeUrl": "https://github.com/Abdelrahman-Aboalkhair/tech-blog.git"
+  },
+  {
+    "id": 6,
+    "image": "/placeholder.png",
+    "title": "تطبيق إدارة المهام بالذكاء الاصطناعي",
+    "tech": "React Native - Expo - Node.js - OpenAI API - Firebase",
+    "desc": "تطبيق إدارة مهام ذكي للهاتف المحمول يستخدم الذكاء الاصطناعي لتصنيف المهام، اقتراح الأولويات، وتقديم رؤى الإنتاجية. يتضمن توافق عبر المنصات ودعم عدم الاتصال. اعرف المزيد >",
+    "gallery": [
+      {
+        "image": "/placeholder.png",
+        "title": "لوحة تحكم المهام",
+        "description": "تنظيم المهام بالذكاء الاصطناعي مع فئات ذكية"
+      },
+      {
+        "image": "/placeholder.png",
+        "title": "عرض التحليلات",
+        "description": "رؤى الإنتاجية والتوصيات المولدة بالذكاء الاصطناعي"
+      }
+    ],
+    "features": [
+      "تصنيف المهام وتحديد الأولويات بالذكاء الاصطناعي",
+      "تنبؤات المواعيد النهائية الذكية",
+      "تحليلات الإنتاجية والرؤى",
+      "دعم الهاتف المحمول عبر المنصات (iOS/Android)",
+      "إدارة المهام بدون اتصال",
+      "إنشاء المهام من الصوت إلى النص",
+      "ميزات التعاون الجماعي",
+      "التكامل مع تطبيقات التقويم"
+    ],
+    "techHighlights": [
+      "تكامل OpenAI API للميزات الذكية",
+      "React Native للتطوير عبر المنصات",
+      "Firebase للمزامنة المباشرة",
+      "هندسة عدم الاتصال أولاً",
+      "نظام الإشعارات الدفعية",
+      "تفاعلات واجهة المستخدم القائمة على الإيماءات"
+    ],
+    "timeline": "4 أشهر",
+    "status": "قيد التطوير",
+    "codeUrl": "https://github.com/Abdelrahman-Aboalkhair/ai-task-manager.git"
+  }
+]

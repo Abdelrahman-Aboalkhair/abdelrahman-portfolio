@@ -22,7 +22,7 @@ const Terminal = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.8 }}
-      className="w-full h-96 bg-gray-900 rounded-lg border border-gray-700 shadow-2xl overflow-hidden font-mono text-sm"
+      className="w-full h-96 rounded-lg border border-border shadow-2xl overflow-hidden font-mono text-sm"
     >
       {/* Terminal Header */}
       <TerminalHeader />
@@ -30,7 +30,7 @@ const Terminal = () => {
       {/* Terminal Content */}
       <div
         ref={terminalRef}
-        className="p-4 h-full overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800"
+        className="p-4 h-full overflow-y-auto scrollbar-thin scrollbar-thumb-border scrollbar-track-muted"
         onClick={() => inputRef.current?.focus()}
       >
         {/* Output History */}

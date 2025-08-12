@@ -29,13 +29,13 @@ const HeroContent = () => {
           duration={0.8}
           wrapperClassName="mb-4"
         >
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-medium text-white">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-medium text-foreground">
             I'm a <span className="text-primary">Full Stack Developer.</span>
           </h2>
         </OverlayReveal>
 
         <motion.p
-          className="text-lg sm:text-lg text-light-gray mb-8 max-w-2xl mx-auto lg:mx-0"
+          className="text-lg sm:text-lg text-foreground/70 mb-8 max-w-2xl mx-auto lg:mx-0"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}

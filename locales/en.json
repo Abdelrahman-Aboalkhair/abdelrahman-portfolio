@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact",
+    "resume": "My resume",
+    "devMode": "Dev Mode",
+    "language": "Language"
+  },
+  "hero": {
+    "greeting": "Hey! I'm Abdelrahman",
+    "title": "Full-Stack Developer",
+    "description": "I'm a self-taught developer from Egypt with a passion for crafting full-stack web apps.",
+    "specialization": "I specialize in the Full Stack Development, but I'm always game to explore new tools if they're the right fit for the job. When I'm not building, I'm probably learning something new to push my skills.",
+    "cta": "Get In Touch"
+  },
+  "about": {
+    "title": "About",
+    "description1": "Hey! I'm Abdelrahman – if you haven't pieced that together yet. I'm a self-taught developer from Egypt with a passion for crafting full-stack web apps.",
+    "description2": "I specialize in the Full Stack Development, but I'm always game to explore new tools if they're the right fit for the job. When I'm not building, I'm probably learning something new to push my skills.",
+    "skillsProject": "Use at projects",
+    "skillsFun": "Use for fun"
+  },
+  "projects": {
+    "title": "Projects",
+    "showAll": "Show All Projects",
+    "showLess": "Show Less Projects",
+    "learnMore": "Learn more",
+    "aboutProject": "About This Project",
+    "keyFeatures": "Key Features",
+    "timeline": "Project Timeline",
+    "developmentPeriod": "Development Period",
+    "defaultTimeline": "3 months",
+    "status": "Status",
+    "completed": "Completed",
+    "technicalHighlights": "Technical Highlights",
+    "viewCode": "View Code",
+    "liveDemo": "Live Demo"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Get In Touch",
+    "description": "Have a project in mind or just want to chat? I'd love to hear from you.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "Failed to send message. Please try again."
+  },
+  "terminal": {
+    "welcome": "Welcome to Abdelrahman's Portfolio Terminal",
+    "helpPrompt": "Type 'help' to see available commands.",
+    "whoamiPrompt": "Type 'whoami' to learn about me.",
+    "commands": {
+      "help": "Show this help message",
+      "whoami": "Display user information",
+      "projects": "Show recent projects",
+      "experience": "Show work experience",
+      "skills": "List technical skills",
+      "contact": "Get contact information",
+      "about": "Learn more about me",
+      "clear": "Clear terminal"
+    },
+    "notFound": "Command '{{command}}' not found.",
+    "helpText": "Type 'help' for available commands."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "close": "Close"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "language": "Language",
+    "theme": "Theme",
+    "devMode": "Dev Mode"
+  }
+}

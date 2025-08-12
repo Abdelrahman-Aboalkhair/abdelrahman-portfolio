@@ -1,4 +1,15 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Abdelrahman's Portfolio
+
+A modern, responsive portfolio website built with Next.js, featuring light/dark theme support, interactive components, and a developer mode with terminal functionality.
+
+## Features
+
+- 🌓 **Light/Dark Theme Toggle** - Switch between light and dark themes with smooth transitions
+- 💻 **Developer Mode** - Interactive terminal with command history and custom commands
+- 🌐 **Internationalization** - Support for multiple languages (Arabic/English)
+- 📱 **Responsive Design** - Optimized for all device sizes
+- ⚡ **Performance Optimized** - Built with Next.js 14 and optimized for speed
+- 🎨 **Modern UI** - Beautiful animations and transitions using Framer Motion
 
 ## Getting Started
 

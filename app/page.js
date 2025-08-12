@@ -1,4 +1,7 @@
+"use client";
+
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import {
   Hero,
   About,
@@ -6,16 +9,21 @@ import {
   Experience,
   Contact,
 } from "../components/sections";
+import { DevModeProvider } from "../contexts/DevModeContext";
+import { LanguageProvider } from "../contexts/LanguageContext";
 
 export default function Home() {
   return (
-    <main className="bg-background text-white">
-      <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Experience />
-      <Contact />
-    </main>
+    <LanguageProvider>
+      <DevModeProvider>
+        <Navbar />
+        <Hero />
+        <About />
+        <Projects />
+        <Experience />
+        <Contact />
+        <Footer />
+      </DevModeProvider>
+    </LanguageProvider>
   );
 }

@@ -74,7 +74,7 @@ const About = () => {
           {/* About Text */}
           <motion.div variants={itemVariants} className="w-full">
             <OverlayReveal>
-              <p className="text-base sm:text-lg text-light-gray mb-4 sm:mb-6 leading-relaxed">
+              <p className="text-base sm:text-lg text-foreground/70 mb-4 sm:mb-6 leading-relaxed">
                 Hey! I'm Abdelrahman – if you haven't pieced that together yet.
                 I'm a self-taught developer from Egypt with a passion for
                 crafting full-stack web apps.
@@ -82,7 +82,7 @@ const About = () => {
             </OverlayReveal>
 
             <OverlayReveal>
-              <p className="text-base sm:text-lg text-light-gray mb-6 sm:mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg text-foreground/70 mb-6 sm:mb-8 leading-relaxed">
                 I specialize in the Full Stack Development, but I'm always game
                 to explore new tools if they're the right fit for the job. When
                 I'm not building, I'm probably learning something new to push my
