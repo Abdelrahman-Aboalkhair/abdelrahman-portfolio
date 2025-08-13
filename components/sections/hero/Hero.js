@@ -19,21 +19,16 @@ const Hero = () => {
       <div
         className={`flex flex-col lg:flex-row items-center ${
           isDevMode ? "justify-between" : "justify-center"
-        } w-full`}
+        } w-full gap-6 lg:gap-8`}
       >
         {/* Main Content */}
-        <div
-          className={`${isDevMode ? "lg:w-2/5" : "lg:w-auto"} ${
-            isDevMode ? "" : "text-center"
-          }`}
-        >
-          <HeroContent />
-        </div>
+
+        <HeroContent />
 
         {/* Interactive Terminal - Only show in dev mode */}
         {isDevMode && (
           <motion.div
-            className="w-full lg:w-3/5 mt-8 lg:mt-0"
+            className="w-full lg:w-3/5 mt-4 lg:mt-0"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 50 }}

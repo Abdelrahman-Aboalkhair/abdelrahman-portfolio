@@ -23,10 +23,8 @@ const About = () => {
     "Postgres",
     "Redis",
     "CI/CD",
-    "GitHub Actions",
     "Docker",
     "GraphQL",
-    "REST",
   ];
 
   const funSkills = [
@@ -105,7 +103,7 @@ const About = () => {
               title="Use at projects"
               icon="💼"
               skills={projectSkills}
-              gridCols="grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
+              gridCols="grid-cols-2 sm:grid-cols-3 lg:grid-cols-3"
               containerVariants={containerVariants}
               itemVariants={itemVariants}
             />

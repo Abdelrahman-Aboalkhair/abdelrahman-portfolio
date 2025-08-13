@@ -2,7 +2,7 @@
   "nav": {
     "about": "About",
     "projects": "Projects",
-    "experience": "Experience",
+    "services": "Services",
     "contact": "Contact",
     "resume": "My resume",
     "devMode": "Dev Mode",
@@ -38,6 +38,42 @@
     "viewCode": "View Code",
     "liveDemo": "Live Demo"
   },
+  "services": {
+    "title": "Services",
+    "landingPage": {
+      "title": "Landing Pages",
+      "description": "Modern, responsive landing pages that convert visitors into customers with stunning design and optimized performance.",
+      "features": [
+        "Responsive design for all devices",
+        "SEO optimization",
+        "Fast loading times",
+        "Contact forms integration",
+        "Analytics setup"
+      ]
+    },
+    "fullStack": {
+      "title": "Full-Stack Web Applications",
+      "description": "Complete web applications with frontend and backend development, databases, and deployment solutions.",
+      "features": [
+        "Frontend & backend development",
+        "Database design & management",
+        "API development",
+        "User authentication",
+        "Cloud deployment"
+      ]
+    },
+    "ecommerce": {
+      "title": "E-commerce Solutions",
+      "description": "Custom e-commerce platforms with payment processing, inventory management, and customer experience optimization.",
+      "features": [
+        "Payment gateway integration",
+        "Inventory management",
+        "Order processing",
+        "Customer accounts",
+        "Admin dashboard"
+      ]
+    }
+  },
   "contact": {
     "title": "Contact",
     "subtitle": "Get In Touch",
@@ -58,7 +94,7 @@
       "help": "Show this help message",
       "whoami": "Display user information",
       "projects": "Show recent projects",
-      "experience": "Show work experience",
+      "services": "Show services offered",
       "skills": "List technical skills",
       "contact": "Get contact information",
       "about": "Learn more about me",

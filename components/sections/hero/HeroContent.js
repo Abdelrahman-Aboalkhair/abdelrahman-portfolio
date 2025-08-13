@@ -2,10 +2,16 @@
 
 import { motion } from "framer-motion";
 import OverlayReveal from "../../shared/ui/OverlayReveal";
+import { useDevMode } from "@/contexts/DevModeContext";
 
 const HeroContent = () => {
+  const { isDevMode } = useDevMode();
   return (
-    <div className="lg:w-[60%] text-center lg:text-left">
+    <div
+      className={`lg:w-[60%] text-center ${
+        isDevMode ? "lg:text-left" : "lg:text-center"
+      }`}
+    >
       <motion.div
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
@@ -15,7 +21,7 @@ const HeroContent = () => {
           trigger="animate"
           delay={0.2}
           duration={0.8}
-          wrapperClassName="mb-6"
+          wrapperClassName="mb-3"
         >
           <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-black">
             Hey, It's Body
@@ -27,7 +33,7 @@ const HeroContent = () => {
           trigger="animate"
           delay={0.6}
           duration={0.8}
-          wrapperClassName="mb-4"
+          wrapperClassName="mb-3"
         >
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-medium text-foreground">
             I'm a <span className="text-primary">Full Stack Developer.</span>
@@ -47,7 +53,7 @@ const HeroContent = () => {
 
         {/* Desktop Resume Button */}
         <motion.div
-          className="hidden lg:block"
+          className="hidden lg:block mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0, duration: 0.6 }}
@@ -55,7 +61,9 @@ const HeroContent = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex gap-2 items-center bg-primary text-white px-8 py-[12px] text-md rounded-sm font-medium transition-colors duration-300"
+            className={`flex gap-2 items-center ${
+              isDevMode ? "" : "mx-auto"
+            } bg-primary text-white px-8 py-[12px] text-md rounded-sm font-medium transition-colors duration-300`}
           >
             Let's connect!
           </motion.button>

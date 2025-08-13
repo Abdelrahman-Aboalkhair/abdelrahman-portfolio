@@ -6,7 +6,7 @@ import {
   Hero,
   About,
   Projects,
-  Experience,
+  Services,
   Contact,
 } from "../components/sections";
 import { DevModeProvider } from "../contexts/DevModeContext";
@@ -20,7 +20,7 @@ export default function Home() {
         <Hero />
         <About />
         <Projects />
-        <Experience />
+        <Services />
         <Contact />
         <Footer />
       </DevModeProvider>

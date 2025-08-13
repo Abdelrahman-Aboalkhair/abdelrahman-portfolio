@@ -29,16 +29,16 @@ const SocialLinks = () => {
           >
             <FaGithub />
           </motion.a>
-          <motion.a
-            href="https://upwork.com"
+          {/* <motion.a
+            href="https://upwork.com/freelancers/~01c620553e92dea652?mp_source=share"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             className="text-primary hover:text-[#A366FF] text-2xl transition-colors duration-300"
           >
-            {/* <FaUpwork /> */}
-          </motion.a>
+            <FaUpwork />
+          </motion.a> */}
         </div>
       </div>
     </OverlayReveal>

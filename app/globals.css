@@ -123,11 +123,13 @@ body {
   padding: 0;
   line-height: 1.6;
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Button hover transitions */
@@ -145,6 +147,18 @@ html {
 .font-handwritten {
   font-family: "Comic Sans MS", cursive, sans-serif;
   font-weight: 400;
+}
+
+/* Terminal specific styles */
+.terminal-container {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.terminal-input {
+  word-break: break-all;
+  overflow-wrap: break-word;
 }
 
 /* Scroll bar styling */
@@ -168,4 +182,16 @@ html {
 ::selection {
   background: #7300ff; /* highlight color */
   color: black; /* text color while highlighted */
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 640px) {
+  .terminal-container {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .terminal-input {
+    font-size: 0.75rem;
+  }
 }

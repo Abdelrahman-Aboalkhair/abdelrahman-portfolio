@@ -2,7 +2,7 @@ import {
   userData,
   projects,
   skills,
-  experience,
+  services,
   aboutContent,
 } from "../data/terminalData";
 
@@ -13,7 +13,7 @@ export const createCommands = (setHistory) => ({
     "",
     "  whoami       - Display user information",
     "  projects     - Show recent projects",
-    "  experience   - Show work experience",
+    "  services     - Show services offered",
     "  skills       - List technical skills",
     "  contact      - Get contact information",
     "  about        - Learn more about me",
@@ -44,10 +44,10 @@ export const createCommands = (setHistory) => ({
       .flat(),
   ],
 
-  experience: () => [
-    "Professional Experience:",
+  services: () => [
+    "Services Offered:",
     "",
-    ...experience.map((exp) => `• ${exp}`),
+    ...services.map((service) => `• ${service}`),
     "",
   ],
 

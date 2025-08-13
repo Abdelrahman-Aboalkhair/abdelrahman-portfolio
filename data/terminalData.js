@@ -48,13 +48,11 @@ export const skills = {
   ],
 };
 
-// Professional experience details
-export const experience = [
-  "3+ years of full-stack development",
-  "Specialized in React and Node.js ecosystems",
-  "Built scalable web applications with modern technologies",
-  "Experience with databases, APIs, and cloud deployment",
-  "Strong focus on user experience and performance",
+// Services offered
+export const services = [
+  "Landing Pages - Modern, responsive landing pages with SEO optimization",
+  "Full-Stack Web Applications - Complete web apps with frontend and backend",
+  "E-commerce Solutions - Custom e-commerce platforms with payment processing",
 ];
 
 // About section content

@@ -159,123 +159,43 @@
   },
   {
     "id": 4,
-    "image": "/placeholder.png",
-    "title": "Restaurant Booking System",
-    "tech": "React - Node.js - Express.js - MongoDB - Stripe",
-    "desc": "A comprehensive restaurant reservation system with table management, real-time availability, customer notifications, and payment integration. Features include multi-location support and analytics dashboard. Learn more >",
+    "image": "/projects/dms/dms-landing-page",
+    "title": "Donor Management System",
+    "tech": "React - Node.js - Express.js - MongoDB - Redux Toolkit - i18next",
+    "desc": "A web-based system for managing donors, their donations, and related activities. Designed for charity organizations to streamline donor records, track contributions, manage communication, and generate reports. Includes multilingual support and responsive design for data entry volunteers across devices.",
     "gallery": [
       {
-        "image": "/placeholder.png",
-        "title": "Booking Interface",
-        "description": "User-friendly reservation system with calendar integration"
+        "image": "/projects/dms/dms-landing-page",
+        "title": "Donor List",
+        "description": "Comprehensive table view with search, filtering, and sorting for all donors"
       },
       {
-        "image": "/placeholder.png",
-        "title": "Table Management",
-        "description": "Restaurant admin panel for managing tables and reservations"
+        "image": "/projects/dms/dms-landing-page",
+        "title": "Add New Donor",
+        "description": "Simple and intuitive form for quickly adding new donors with validation"
       }
     ],
     "features": [
-      "Real-time table availability checking",
-      "Multi-restaurant location support",
-      "Customer notification system (SMS/Email)",
-      "Payment integration with Stripe",
-      "Table layout visualization",
-      "Booking analytics and reports",
-      "Customer review and rating system",
-      "Waitlist management"
+      "Add, edit, and delete donor profiles",
+      "Track donations by amount, date, and type",
+      "Search and filter donors by multiple criteria",
+      "Multilingual support with i18next",
+      "Responsive design for desktop, tablet, and mobile",
+      "Bulk import/export donor data via CSV",
+      "Activity logs for all operations",
+      "Offline-first support using PWA features"
     ],
     "techHighlights": [
-      "Real-time updates with Socket.IO",
-      "Optimistic UI for instant feedback",
-      "Efficient calendar algorithms",
-      "RESTful API design",
-      "MongoDB aggregation pipelines",
-      "Responsive design with mobile-first approach"
-    ],
-    "timeline": "3 months",
-    "status": "In Progress",
-    "codeUrl": "https://github.com/Abdelrahman-Aboalkhair/restaurant-booking.git"
-  },
-  {
-    "id": 5,
-    "image": "/placeholder.png",
-    "title": "Tech Blog Platform",
-    "tech": "Next.js - TypeScript - Sanity CMS - Tailwind CSS",
-    "desc": "A modern blog platform focused on tech content with markdown support, syntax highlighting, SEO optimization, and content management system. Features include author profiles and comment system. Learn more >",
-    "gallery": [
-      {
-        "image": "/placeholder.png",
-        "title": "Blog Homepage",
-        "description": "Clean and modern blog layout with featured articles"
-      },
-      {
-        "image": "/placeholder.png",
-        "title": "Article Reader",
-        "description": "Optimized reading experience with syntax highlighting"
-      }
-    ],
-    "features": [
-      "Markdown content support with syntax highlighting",
-      "SEO optimization with meta tags",
-      "Content Management System integration",
-      "Author profile pages",
-      "Comment system with moderation",
-      "Tag-based article categorization",
-      "Search functionality",
-      "Newsletter subscription"
-    ],
-    "techHighlights": [
-      "Static Site Generation with Next.js",
-      "Headless CMS integration with Sanity",
-      "Advanced SEO optimization",
-      "Code syntax highlighting",
-      "Image optimization and lazy loading",
-      "PWA capabilities"
+      "State management with Redux Toolkit",
+      "RESTful API with Express.js",
+      "MongoDB aggregation for advanced filtering",
+      "Responsive UI built with Tailwind CSS",
+      "i18next integration for localization",
+      "Optimistic updates for smooth user experience",
+      "Pagination and server-side filtering"
     ],
     "timeline": "2 months",
-    "status": "Completed",
-    "demoUrl": "https://tech-blog-platform.vercel.app",
-    "codeUrl": "https://github.com/Abdelrahman-Aboalkhair/tech-blog.git"
-  },
-  {
-    "id": 6,
-    "image": "/placeholder.png",
-    "title": "AI Task Management App",
-    "tech": "React Native - Expo - Node.js - OpenAI API - Firebase",
-    "desc": "An intelligent task management mobile application that uses AI to categorize tasks, suggest priorities, and provide productivity insights. Features cross-platform compatibility and offline support. Learn more >",
-    "gallery": [
-      {
-        "image": "/placeholder.png",
-        "title": "Task Dashboard",
-        "description": "AI-powered task organization with smart categories"
-      },
-      {
-        "image": "/placeholder.png",
-        "title": "Analytics View",
-        "description": "Productivity insights and AI-generated recommendations"
-      }
-    ],
-    "features": [
-      "AI-powered task categorization and prioritization",
-      "Smart deadline predictions",
-      "Productivity analytics and insights",
-      "Cross-platform mobile support (iOS/Android)",
-      "Offline task management",
-      "Voice-to-text task creation",
-      "Team collaboration features",
-      "Integration with calendar apps"
-    ],
-    "techHighlights": [
-      "OpenAI API integration for intelligent features",
-      "React Native for cross-platform development",
-      "Firebase for real-time synchronization",
-      "Offline-first architecture",
-      "Push notification system",
-      "Gesture-based UI interactions"
-    ],
-    "timeline": "4 months",
     "status": "In Progress",
-    "codeUrl": "https://github.com/Abdelrahman-Aboalkhair/ai-task-manager.git"
+    "codeUrl": "https://github.com/Abdelrahman-Aboalkhair/donor-management-system"
   }
 ]

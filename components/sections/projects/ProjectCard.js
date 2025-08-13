@@ -5,7 +5,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import ProjectModal from "./ProjectModal";
-import { FaChevronRight } from "react-icons/fa";
+import { ChevronRight } from "lucide-react";
 
 const ProjectCard = ({ project, variants }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -65,7 +65,7 @@ const ProjectCard = ({ project, variants }) => {
             className="flex items-center gap-2 text-[#7300FF] hover:text-[#8533ff] font-medium transition-colors group/btn text-sm sm:text-base"
           >
             <span>{t("projects.learnMore")}</span>
-            <FaChevronRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 transition-transform" />
+            <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 transition-transform" />
           </button>
         </div>
 

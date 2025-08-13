@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { RiCloseFill, RiMenu3Fill } from "react-icons/ri";
+import { X, Menu } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import ThemeToggle from "./shared/ui/ThemeToggle";
+import DevModeToggle from "./shared/ui/DevModeToggle";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,13 +22,13 @@ const Navbar = () => {
   const navItems = [
     { label: t("nav.about"), id: "about" },
     { label: t("nav.projects"), id: "projects" },
-    { label: t("nav.experience"), id: "experience" },
+    { label: t("nav.services"), id: "services" },
     { label: t("nav.contact"), id: "contact" },
   ];
 
   // Intersection Observer to track active section
   useEffect(() => {
-    const sections = ["hero", "about", "projects", "experience", "contact"];
+    const sections = ["hero", "about", "projects", "services", "contact"];
     const observers = new Map();
 
     const observerOptions = {
@@ -107,7 +107,7 @@ const Navbar = () => {
 
           {/* Theme Toggle - Keep only theme in navbar */}
           <div className="hidden md:flex items-center gap-4">
-            <ThemeToggle />
+            <DevModeToggle />
           </div>
 
           {/* Resume Button */}
@@ -129,7 +129,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="text-foreground/80 hover:text-primary focus:outline-none"
             >
-              {isOpen ? <RiCloseFill size={24} /> : <RiMenu3Fill size={24} />}
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
