@@ -6,6 +6,13 @@ import { useDevMode } from "@/contexts/DevModeContext";
 
 const HeroContent = () => {
   const { isDevMode } = useDevMode();
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div
       className={`lg:w-[60%] text-center ${
@@ -51,7 +58,7 @@ const HeroContent = () => {
           new skills and exploring ways to solve real-world problems with tech.
         </motion.p>
 
-        {/* Desktop Resume Button */}
+        {/* Desktop Connect Button */}
         <motion.div
           className="hidden lg:block mx-auto"
           initial={{ opacity: 0, y: 20 }}
@@ -59,11 +66,12 @@ const HeroContent = () => {
           transition={{ delay: 1.0, duration: 0.6 }}
         >
           <motion.button
+            onClick={scrollToContact}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className={`flex gap-2 items-center ${
               isDevMode ? "" : "mx-auto"
-            } bg-primary text-white px-8 py-[12px] text-md rounded-sm font-medium transition-colors duration-300`}
+            } bg-primary text-white px-8 py-[12px] text-md rounded-sm font-medium transition-colors duration-300 hover:bg-primary/90`}
           >
             Let's connect!
           </motion.button>
@@ -77,9 +85,10 @@ const HeroContent = () => {
           transition={{ delay: 1.0, duration: 0.6 }}
         >
           <motion.button
+            onClick={scrollToContact}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-primary text-white px-8 py-4 rounded-xl font-medium text-lg hover:bg-[#A366FF] transition-colors duration-300"
+            className="bg-primary text-white px-8 py-4 rounded-xl font-medium text-lg hover:bg-primary/90 transition-colors duration-300"
           >
             Let's connect!
           </motion.button>

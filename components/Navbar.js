@@ -169,12 +169,22 @@ const Navbar = () => {
             <div className="px-3 py-2">
               <motion.a
                 href="https://drive.google.com/file/d/1M2QmESPSAYzRGxH1FMPLMHFeIsk5LGW4/view?usp=drive_link"
-                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-primary text-white px-4 py-2 rounded-sm
-                                 font-medium hover:bg-primary-hover transition-colors duration-300 w-full"
+                whileHover="hover"
+                className="relative flex items-center justify-center border-2 border-primary text-primary px-4 py-2 rounded-sm
+                                 font-medium overflow-hidden group transition-all duration-300 w-full"
               >
-                {t("nav.resume")}
+                <motion.span
+                  className="absolute inset-0 bg-primary origin-top-left"
+                  initial={{ scaleX: 0, scaleY: 0 }}
+                  variants={{
+                    hover: { scaleX: 1, scaleY: 1 },
+                  }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                />
+                <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+                  {t("nav.resume")}
+                </span>
               </motion.a>
             </div>
           </div>

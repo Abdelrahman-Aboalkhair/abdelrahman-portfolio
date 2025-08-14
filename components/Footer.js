@@ -24,7 +24,7 @@ const Footer = () => {
 
           {/* Toggle Controls */}
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2">
+            {/* <div className="flex items-center gap-2">
               <span className="text-foreground/60 text-xs hidden sm:block">
                 {t("footer.language")}
               </span>
@@ -36,7 +36,7 @@ const Footer = () => {
                 {t("footer.theme")}
               </span>
               <ThemeToggle />
-            </div>
+            </div> */}
 
             <div className="flex items-center gap-2">
               <span className="text-foreground/60 text-xs hidden sm:block">
@@ -47,7 +47,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <SocialLinks />
+        {/* <SocialLinks /> */}
       </div>
     </footer>
   );

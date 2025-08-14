@@ -159,43 +159,75 @@
   },
   {
     "id": 4,
-    "image": "/projects/dms/dms-landing-page",
+    "image": "/projects/dms/dms-landing-page.jpg",
     "title": "Donor Management System",
     "tech": "React - Node.js - Express.js - MongoDB - Redux Toolkit - i18next",
-    "desc": "A web-based system for managing donors, their donations, and related activities. Designed for charity organizations to streamline donor records, track contributions, manage communication, and generate reports. Includes multilingual support and responsive design for data entry volunteers across devices.",
+    "desc": "A comprehensive web-based system for managing donors, their donations, and related activities. Designed for charity organizations to streamline donor records, track contributions, manage communication, and generate reports. Includes multilingual support and responsive design for data entry volunteers across devices.",
     "gallery": [
       {
-        "image": "/projects/dms/dms-landing-page",
-        "title": "Donor List",
-        "description": "Comprehensive table view with search, filtering, and sorting for all donors"
+        "image": "/projects/dms/dms-landing-page.jpg",
+        "title": "Landing Page",
+        "description": "Modern landing page with overview of system features and quick access to main functions"
       },
       {
-        "image": "/projects/dms/dms-landing-page",
+        "image": "/projects/dms/donors-management.jpg",
+        "title": "Donors Management",
+        "description": "Complete donor database with search, filter, and bulk operations for efficient management"
+      },
+      {
+        "image": "/projects/dms/new-donors.jpg",
         "title": "Add New Donor",
-        "description": "Simple and intuitive form for quickly adding new donors with validation"
+        "description": "Intuitive form for adding new donors with validation and auto-save functionality"
+      },
+      {
+        "image": "/projects/dms/new-donation.png",
+        "title": "New Donation",
+        "description": "Streamlined donation entry form with donor selection and payment tracking"
+      },
+      {
+        "image": "/projects/dms/phone-calls.jpg",
+        "title": "Phone Calls Management",
+        "description": "Call tracking system for donor outreach and communication history"
+      },
+      {
+        "image": "/projects/dms/fav-location.png",
+        "title": "Favorite Locations",
+        "description": "Geographic tracking of donor locations and donation hotspots"
+      },
+      {
+        "image": "/projects/dms/emergency.png",
+        "title": "Emergency Contacts",
+        "description": "Quick access to emergency donor contacts and urgent communication tools"
       }
     ],
     "features": [
-      "Add, edit, and delete donor profiles",
-      "Track donations by amount, date, and type",
-      "Search and filter donors by multiple criteria",
-      "Multilingual support with i18next",
-      "Responsive design for desktop, tablet, and mobile",
-      "Bulk import/export donor data via CSV",
-      "Activity logs for all operations",
-      "Offline-first support using PWA features"
+      "Comprehensive donor profile management with detailed information",
+      "Advanced donation tracking by amount, date, type, and frequency",
+      "Real-time search and filtering across all donor data",
+      "Phone call management and communication history tracking",
+      "Geographic location tracking and favorite locations management",
+      "Emergency contact system for urgent donor outreach",
+      "Multilingual support (Arabic/English) with i18next",
+      "Responsive design optimized for desktop, tablet, and mobile devices",
+      "Bulk import/export donor data via CSV with validation",
+      "Activity logs and audit trails for all operations",
+      "Dashboard analytics with donor statistics and trends",
+      "Offline-first support using Progressive Web App features"
     ],
     "techHighlights": [
-      "State management with Redux Toolkit",
-      "RESTful API with Express.js",
-      "MongoDB aggregation for advanced filtering",
-      "Responsive UI built with Tailwind CSS",
-      "i18next integration for localization",
+      "State management with Redux Toolkit for complex data flows",
+      "RESTful API with Express.js and MongoDB aggregation",
+      "Advanced filtering and search with MongoDB queries",
+      "Responsive UI built with Tailwind CSS and modern design patterns",
+      "i18next integration for seamless localization",
       "Optimistic updates for smooth user experience",
-      "Pagination and server-side filtering"
+      "Pagination and server-side filtering for performance",
+      "Form validation and auto-save functionality",
+      "Geographic data handling and visualization",
+      "Real-time updates and notifications"
     ],
     "timeline": "2 months",
-    "status": "In Progress",
+    "status": "Completed",
     "codeUrl": "https://github.com/Abdelrahman-Aboalkhair/donor-management-system"
   }
 ]
