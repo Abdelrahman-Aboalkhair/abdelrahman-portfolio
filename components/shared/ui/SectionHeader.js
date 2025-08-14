@@ -11,7 +11,7 @@ const SectionHeader = ({
   showDivider = true,
 }) => {
   const headerContent = (
-    <h2 className="flex items-center text-2xl sm:text-3xl lg:text-5xl font-bold">
+    <h2 className="flex items-center text-2xl sm:text-3xl lg:text-5xl font-bold mr-4 ">
       {title} <span className="text-primary">.</span>
     </h2>
   );
@@ -23,7 +23,7 @@ const SectionHeader = ({
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className={`flex items-center justify-between gap-8 mb-12 ${className}`}
+        className={`flex items-center justify-between gap-4 mb-12 ${className}`}
       >
         {showDivider && <div className="w-full h-[1.6px] bg-muted"></div>}
         <OverlayReveal

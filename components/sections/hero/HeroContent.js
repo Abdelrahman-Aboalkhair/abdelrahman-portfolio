@@ -30,7 +30,7 @@ const HeroContent = () => {
           duration={0.8}
           wrapperClassName="mb-3"
         >
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-black">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-tighter tracking-tight font-black whitespace-nowrap">
             Hey, It's Body
             <span className="text-primary">.</span>
           </h1>
@@ -77,21 +77,21 @@ const HeroContent = () => {
           </motion.button>
         </motion.div>
 
-        {/* Mobile Connect Button */}
+        {/* Mobile Resume Button */}
         <motion.div
           className="block lg:hidden"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0, duration: 0.6 }}
         >
-          <motion.button
-            onClick={scrollToContact}
+          <motion.a
+            href="https://drive.google.com/file/d/1M2QmESPSAYzRGxH1FMPLMHFeIsk5LGW4/view?usp=drive_link"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-primary text-white px-8 py-4 rounded-xl font-medium text-lg hover:bg-primary/90 transition-colors duration-300"
+            className="inline-block bg-primary text-white px-8 py-2 rounded-sm font-medium text-md hover:bg-primary/90 transition-colors duration-300"
           >
-            Let's connect!
-          </motion.button>
+            My resume
+          </motion.a>
         </motion.div>
       </motion.div>
     </div>

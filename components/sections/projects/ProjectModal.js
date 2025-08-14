@@ -1,21 +1,26 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { X, Loader2 } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, memo } from "react";
 import ProjectGallery from "./ProjectGallery";
 import FullscreenViewer from "./FullscreenViewer";
 import ProjectVideo from "./ProjectVideo";
 import ProjectDetails from "./ProjectDetails";
 
-const ProjectModal = ({ project, isOpen, onClose }) => {
+const ProjectModal = memo(({ project, isOpen, onClose }) => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Reset selected image when project changes
   useEffect(() => {
     setSelectedImage(0);
+    setIsLoading(true);
+    // Simulate loading time for better UX
+    const timer = setTimeout(() => setIsLoading(false), 300);
+    return () => clearTimeout(timer);
   }, [project]);
 
   // Prevent body scroll when modal is open
@@ -35,28 +40,64 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
     }
   }, [isOpen]);
 
+  const handleClose = useCallback(() => {
+    setIsFullscreen(false);
+    onClose();
+  }, [onClose]);
+
+  const handleFullscreenOpen = useCallback(() => {
+    setIsFullscreen(true);
+  }, []);
+
   if (!project) return null;
 
   const modalVariants = {
-    hidden: { y: 100 },
+    hidden: {
+      y: 100,
+      opacity: 0,
+      scale: 0.95,
+    },
     visible: {
       y: 0,
-      transition: { duration: 0.2, ease: "easeOut" },
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut",
+        staggerChildren: 0.1,
+      },
     },
     exit: {
       y: 100,
+      opacity: 0,
+      scale: 0.95,
       transition: { duration: 0.2 },
     },
   };
 
   const overlayVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-    exit: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.2 },
+    },
+    exit: {
+      opacity: 0,
+      transition: { duration: 0.2 },
+    },
+  };
+
+  const contentVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.3, delay: 0.1 },
+    },
   };
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       {isOpen && (
         <motion.div
           key={project.id + "modal"}
@@ -69,7 +110,10 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
           {/* Backdrop */}
           <motion.div
             className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-            onClick={onClose}
+            onClick={handleClose}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
           />
 
           {/* Modal */}
@@ -78,47 +122,95 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
             className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white/10 backdrop-blur-xl border border-white/20 rounded-md shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Loading Overlay */}
+            {isLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-20 rounded-md">
+                <div className="text-center">
+                  <Loader2 className="w-12 h-12 text-[#7300FF] animate-spin mx-auto mb-4" />
+                  <p className="text-white/80 text-sm">Loading project...</p>
+                </div>
+              </div>
+            )}
+
             {/* Close Button */}
-            <button
-              onClick={onClose}
+            <motion.button
+              onClick={handleClose}
               className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
             >
               <X className="w-5 h-5 text-white" />
-            </button>
+            </motion.button>
 
             {/* Modal Content */}
-            <div className="p-8">
+            <motion.div className="p-8" variants={contentVariants}>
               {/* Header */}
-              <h2 className="text-2xl font-bold text-white mb-6">
+              <motion.h2
+                className="text-2xl font-bold text-white mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+              >
                 {project.title}
-              </h2>
+              </motion.h2>
 
               {/* Project Image Gallery */}
               {project.gallery && project.gallery.length > 0 ? (
-                <ProjectGallery
-                  gallery={project.gallery}
-                  selectedImage={selectedImage}
-                  setSelectedImage={setSelectedImage}
-                  onFullscreenOpen={() => setIsFullscreen(true)}
-                />
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <ProjectGallery
+                    gallery={project.gallery}
+                    selectedImage={selectedImage}
+                    setSelectedImage={setSelectedImage}
+                    onFullscreenOpen={handleFullscreenOpen}
+                  />
+                </motion.div>
               ) : (
                 /* Fallback Single Image */
-                <div className="mb-8 flex items-center justify-center">
+                <motion.div
+                  className="mb-8 flex items-center justify-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
                   <Image
                     src={project.image}
                     width={500}
                     height={200}
                     alt={`${project.title} project preview`}
+                    className="rounded-lg"
+                    priority
                   />
-                </div>
+                </motion.div>
               )}
 
               {/* Demo Video Section */}
-              <ProjectVideo videoUrl={project.videoUrl} title={project.title} />
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                <ProjectVideo
+                  videoUrl={project.videoUrl}
+                  title={project.title}
+                />
+              </motion.div>
 
               {/* Project Details */}
-              <ProjectDetails project={project} />
-            </div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+              >
+                <ProjectDetails project={project} />
+              </motion.div>
+            </motion.div>
           </motion.div>
         </motion.div>
       )}
@@ -133,6 +225,8 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
       />
     </AnimatePresence>
   );
-};
+});
+
+ProjectModal.displayName = "ProjectModal";
 
 export default ProjectModal;

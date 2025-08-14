@@ -1,6 +1,7 @@
 import React from "react";
 import OverlayReveal from "./OverlayReveal";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const SocialLinks = () => {
@@ -29,16 +30,22 @@ const SocialLinks = () => {
           >
             <FaGithub />
           </motion.a>
-          {/* <motion.a
+          <motion.a
             href="https://upwork.com/freelancers/~01c620553e92dea652?mp_source=share"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="text-primary hover:text-[#A366FF] text-2xl transition-colors duration-300"
+            className="flex items-center bg-primary rounded-full justify-center w-6 h-6 transition-colors duration-300 hover:opacity-80"
           >
-            <FaUpwork />
-          </motion.a> */}
+            <Image
+              src="/icons/upwork.png"
+              alt="Upwork"
+              width={24}
+              height={24}
+              className="w-6 h-6"
+            />
+          </motion.a>
         </div>
       </div>
     </OverlayReveal>

@@ -21,8 +21,6 @@ const Hero = () => {
           isDevMode ? "justify-between" : "justify-center"
         } w-full gap-6 lg:gap-8`}
       >
-        {/* Main Content */}
-
         <HeroContent />
 
         {/* Interactive Terminal - Only show in dev mode */}

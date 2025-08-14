@@ -159,12 +159,12 @@ const Navbar = () => {
             ))}
 
             {/* Mobile Theme Toggle - Keep only theme in mobile menu */}
-            <div className="px-3 py-2 border-t border-border mt-2">
+            {/* <div className="px-3 py-2 border-t border-border mt-2">
               <div className="flex items-center justify-between">
                 <span className="text-foreground/60 text-sm">Theme</span>
                 <ThemeToggle />
               </div>
-            </div>
+            </div> */}
 
             <div className="px-3 py-2">
               <motion.a
