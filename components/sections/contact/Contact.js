@@ -40,7 +40,7 @@ const Contact = () => {
         {/* Section Title */}
         <motion.div className="mb-4" variants={itemVariants}>
           <OverlayReveal trigger="whileInView" delay={0.5} duration={0.8}>
-            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mr-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold">
               Contact<span className="text-[#7300FF]">.</span>
             </h2>
           </OverlayReveal>
@@ -48,7 +48,7 @@ const Contact = () => {
 
         {/* Contact Description */}
         <OverlayReveal>
-          <p className="text-lg sm:text-lg text-light-gray mb-4 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-md sm:text-lg text-light-gray mb-4 leading-relaxed max-w-2xl mx-auto">
             Shoot me an email if you want to connect! You can also find me on
             LinkedIn if that's more your speed.
           </p>
@@ -61,7 +61,7 @@ const Contact = () => {
               href="mailto:abdelrahman.aboalkhair@gmail.com"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-2xl sm:text-xl font-medium inline-block"
+              className="text-lg sm:text-xl font-medium inline-block"
             >
               abdelrahman.aboalkhair@gmail.com
             </motion.a>
