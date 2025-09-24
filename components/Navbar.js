@@ -113,7 +113,8 @@ const Navbar = () => {
           {/* Resume Button */}
           <div className="hidden md:block">
             <motion.a
-              href="https://drive.google.com/file/d/1M2QmESPSAYzRGxH1FMPLMHFeIsk5LGW4/view?usp=drive_link"
+              href="/abdelrahman-aboalkhair-resume.pdf"
+              download="Abdelrahman-Aboalkhair-Resume.pdf"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex gap-2 items-center border-2 border-primary text-primary px-6 py-2 rounded-sm font-medium 
@@ -168,7 +169,8 @@ const Navbar = () => {
 
             <div className="px-3 py-2">
               <motion.a
-                href="https://drive.google.com/file/d/1M2QmESPSAYzRGxH1FMPLMHFeIsk5LGW4/view?usp=drive_link"
+                href="/abdelrahman-aboalkhair-resume.pdf"
+                download="Abdelrahman-Aboalkhair-Resume.pdf"
                 whileTap={{ scale: 0.95 }}
                 whileHover="hover"
                 className="relative flex items-center justify-center border-2 border-primary text-primary px-4 py-2 rounded-sm

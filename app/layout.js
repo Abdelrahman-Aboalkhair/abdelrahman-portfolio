@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${cairo.variable} font-poppins antialiased`}
+        className={`${poppins.variable} ${cairo.variable} font-poppins antialiased bg-grid`}
       >
         <ThemeProvider>{children}</ThemeProvider>
       </body>

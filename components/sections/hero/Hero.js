@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     <SectionLayout
       id="hero"
-      className="min-h-screen flex items-center justify-center pt-16"
+      className="min-h-screen flex items-center justify-center pt-16 bg-grid"
       paddingY=""
       backgroundColor=""
     >

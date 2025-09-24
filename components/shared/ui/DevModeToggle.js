@@ -11,7 +11,6 @@ const DevModeToggle = () => {
     <div className="flex items-center gap-3">
       {/* Dev Mode Label */}
       <div className="hidden lg:flex items-center gap-1 text-xs text-gray-400">
-        <Terminal className="w-3 h-3" />
         <span>Dev Mode</span>
       </div>
 
@@ -51,30 +50,6 @@ const DevModeToggle = () => {
           </motion.div>
         </motion.div>
       </button>
-
-      {/* Status Indicator */}
-      <div className="hidden sm:flex items-center gap-1">
-        <motion.div
-          animate={{
-            scale: isDevMode ? [1, 1.2, 1] : 1,
-          }}
-          transition={{
-            duration: 0.6,
-            repeat: isDevMode ? Infinity : 0,
-            repeatDelay: 2,
-          }}
-          className={`w-2 h-2 rounded-full ${
-            isDevMode ? "bg-green-400" : "bg-gray-500"
-          }`}
-        />
-        <span
-          className={`text-xs ${
-            isDevMode ? "text-green-400" : "text-gray-500"
-          }`}
-        >
-          {isDevMode ? "ON" : "OFF"}
-        </span>
-      </div>
     </div>
   );
 };

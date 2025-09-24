@@ -184,6 +184,42 @@ html {
   color: black; /* text color while highlighted */
 }
 
+/* Lightweight grid background utility */
+.bg-grid {
+  position: relative;
+  background-color: var(--background);
+  background-image: linear-gradient(
+      to right,
+      rgba(228, 224, 224, 0.06) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(228, 224, 224, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Subtle vignette to fade edges so grid doesn't dominate */
+.bg-grid:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0) 40%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+}
+
+/* Adjust grid tone in light theme */
+[data-theme="light"] .bg-grid {
+  background-image: linear-gradient(
+      to right,
+      rgba(17, 17, 17, 0.06) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(17, 17, 17, 0.06) 1px, transparent 1px);
+}
+
 /* Mobile-specific optimizations */
 @media (max-width: 640px) {
   .terminal-container {
