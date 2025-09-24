@@ -11,6 +11,7 @@ import ProjectCard from "./ProjectCard";
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
   const [projectsData, setProjectsData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { i18n, t } = useTranslation();
   const INITIAL_PROJECTS_COUNT = 4;
   const containerVariants = {
@@ -41,23 +42,33 @@ const Projects = () => {
     },
   };
 
-  // Load language-specific projects data
+  // Load projects data from database
   useEffect(() => {
     const loadProjectsData = async () => {
+      setLoading(true);
       try {
-        const data = await import(
-          `../../../data/projects.${i18n.language}.json`
-        );
-        setProjectsData(data.default);
+        const response = await fetch("/api/projects", {
+          cache: "no-store", // Ensure fresh data
+        });
+        const result = await response.json();
+        console.log("result: ", result);
+
+        if (result.ok) {
+          setProjectsData(result.data);
+        } else {
+          console.error("Failed to load projects:", result.error);
+          setProjectsData([]);
+        }
       } catch (error) {
-        // Fallback to English if language-specific file doesn't exist
-        const fallbackData = await import("../../../data/projects.en.json");
-        setProjectsData(fallbackData.default);
+        console.error("Error loading projects:", error);
+        setProjectsData([]);
+      } finally {
+        setLoading(false);
       }
     };
 
     loadProjectsData();
-  }, [i18n.language]);
+  }, []); // Remove i18n.language dependency since we're using database
 
   // Get projects to display based on showAll state
   const displayedProjects = showAll
@@ -85,23 +96,32 @@ const Projects = () => {
         />
 
         {/* Projects Grid */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6"
-          variants={containerVariants}
-        >
-          <AnimatePresence mode="popLayout">
-            {displayedProjects.map((project) => (
-              <ProjectCard
-                key={project.id}
-                project={project}
-                variants={cardVariants}
-              />
-            ))}
-          </AnimatePresence>
-        </motion.div>
+        {loading ? (
+          <div className="flex justify-center items-center py-12">
+            <div className="flex items-center gap-3 text-foreground/60">
+              <div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+              <span>Loading projects...</span>
+            </div>
+          </div>
+        ) : (
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6"
+            variants={containerVariants}
+          >
+            <AnimatePresence mode="popLayout">
+              {displayedProjects.map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  variants={cardVariants}
+                />
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        )}
 
         {/* Load More/Less Button */}
-        {hasMoreProjects && (
+        {!loading && hasMoreProjects && (
           <motion.div
             className="flex justify-center mt-8 sm:mt-12"
             variants={buttonVariants}
